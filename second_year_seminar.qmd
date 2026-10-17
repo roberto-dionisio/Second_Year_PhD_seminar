@@ -9,8 +9,6 @@ format:
     footer: "R. Dionisio · Topological observables and the sampling problem"
     center-title-slide: true
     pdf-separate-fragments: false
-    # A lone image gets .r-stretch and an inline height that beats theme.scss;
-    # size every figure from CSS instead (as in the StaND4LQ deck).
     auto-stretch: false
 header-logo: cherubino_white.png
 author:
