@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="756pt" height="352.8pt" viewBox="0 0 756 352.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-14T16:47:23.943431</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 352.8 
+L 756 352.8 
+L 756 0 
+L 0 0 
+L 0 352.8 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="LineCollection_1">
+    <path d="M 616.22129 246.714574 
+L 616.22129 224.626226 
+" clip-path="url(#pa439021432)" style="fill: none; stroke: #23373b; stroke-width: 2.2"/>
+   </g>
+   <g id="line2d_1">
+    <defs>
+     <path id="m8f008bf164" d="M 5 0 
+L -5 -0 
+" style="stroke: #23373b"/>
+    </defs>
+    <g clip-path="url(#pa439021432)">
+     <use xlink:href="#m8f008bf164" x="616.22129" y="246.714574" style="fill: #23373b; stroke: #23373b"/>
+    </g>
+   </g>
+   <g id="line2d_2">
+    <g clip-path="url(#pa439021432)">
+     <use xlink:href="#m8f008bf164" x="616.22129" y="224.626226" style="fill: #23373b; stroke: #23373b"/>
+    </g>
+   </g>
+   <g id="text_1">
+    <!-- $-0.079(4)$ -->
+    <g style="fill: #9c162a" transform="translate(628.86329 222.568617) scale(0.17 -0.17)">
+     <defs>
+      <path id="FiraSans-Light-2212" d="M 442 1958 
+L 442 2285 
+L 2714 2285 
+L 2714 1958 
+L 442 1958 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-30" d="M 1760 4326 
+Q 2419 4326 2758 3766 
+Q 3098 3206 3098 2125 
+Q 3098 1050 2755 490 
+Q 2413 -70 1760 -70 
+Q 1101 -70 761 490 
+Q 422 1050 422 2131 
+Q 422 3213 761 3769 
+Q 1101 4326 1760 4326 
+z
+M 1760 4019 
+Q 806 4019 806 2131 
+Q 806 237 1760 237 
+Q 2227 237 2467 697 
+Q 2707 1158 2707 2125 
+Q 2707 3091 2467 3555 
+Q 2227 4019 1760 4019 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-2e" d="M 659 538 
+Q 794 538 880 451 
+Q 966 365 966 237 
+Q 966 102 880 16 
+Q 794 -70 659 -70 
+Q 531 -70 441 19 
+Q 352 109 352 237 
+Q 352 365 441 451 
+Q 531 538 659 538 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-37" d="M 2566 4256 
+L 2566 3968 
+L 890 -51 
+L 544 64 
+L 2182 3942 
+L 192 3942 
+L 192 4256 
+L 2566 4256 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-39" d="M 1632 4326 
+Q 2278 4326 2601 3875 
+Q 2925 3424 2925 2611 
+Q 2925 1786 2688 1261 
+Q 2451 736 1993 422 
+Q 1536 109 787 -122 
+L 691 166 
+Q 1574 435 2038 902 
+Q 2502 1370 2547 2182 
+Q 2355 1901 2086 1744 
+Q 1818 1587 1498 1587 
+Q 1165 1587 902 1750 
+Q 640 1914 489 2218 
+Q 339 2522 339 2931 
+Q 339 3354 508 3670 
+Q 678 3987 972 4156 
+Q 1267 4326 1632 4326 
+z
+M 1562 1894 
+Q 1862 1894 2102 2057 
+Q 2342 2221 2547 2534 
+Q 2554 3296 2336 3657 
+Q 2118 4019 1645 4019 
+Q 1216 4019 969 3734 
+Q 723 3450 723 2925 
+Q 723 2432 950 2163 
+Q 1178 1894 1562 1894 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-28" d="M 1728 5203 
+Q 1389 4698 1184 4304 
+Q 979 3910 854 3404 
+Q 730 2899 730 2240 
+Q 730 1581 854 1075 
+Q 979 570 1184 176 
+Q 1389 -218 1728 -723 
+L 1491 -877 
+Q 1094 -320 867 77 
+Q 640 474 493 1005 
+Q 346 1536 346 2240 
+Q 346 2944 493 3475 
+Q 640 4006 867 4403 
+Q 1094 4800 1491 5357 
+L 1728 5203 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-34" d="M 3091 1427 
+L 3091 1120 
+L 2515 1120 
+L 2515 0 
+L 2150 0 
+L 2150 1120 
+L 288 1120 
+L 288 1395 
+L 1587 4326 
+L 1901 4198 
+L 685 1427 
+L 2150 1427 
+L 2195 2675 
+L 2515 2675 
+L 2515 1427 
+L 3091 1427 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-29" d="M 582 5357 
+Q 979 4800 1206 4403 
+Q 1434 4006 1581 3475 
+Q 1728 2944 1728 2240 
+Q 1728 1536 1581 1005 
+Q 1434 474 1206 77 
+Q 979 -320 582 -877 
+L 346 -723 
+Q 685 -218 889 176 
+Q 1094 570 1219 1075 
+Q 1344 1581 1344 2240 
+Q 1344 2899 1219 3404 
+Q 1094 3910 889 4304 
+Q 685 4698 346 5203 
+L 582 5357 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#FiraSans-Light-2212" transform="translate(0 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-30" transform="translate(49.299988 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-2e" transform="translate(104.299973 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-30" transform="translate(124.999969 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-37" transform="translate(179.999954 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-39" transform="translate(223.699951 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-28" transform="translate(275.499939 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-34" transform="translate(307.899933 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-29" transform="translate(359.699921 0.296875)"/>
+    </g>
+   </g>
+   <g id="line2d_3">
+    <defs>
+     <path id="m37d7301c7d" d="M 0 5.5 
+C 1.458617 5.5 2.857689 4.920485 3.889087 3.889087 
+C 4.920485 2.857689 5.5 1.458617 5.5 0 
+C 5.5 -1.458617 4.920485 -2.857689 3.889087 -3.889087 
+C 2.857689 -4.920485 1.458617 -5.5 0 -5.5 
+C -1.458617 -5.5 -2.857689 -4.920485 -3.889087 -3.889087 
+C -4.920485 -2.857689 -5.5 -1.458617 -5.5 0 
+C -5.5 1.458617 -4.920485 2.857689 -3.889087 3.889087 
+C -2.857689 4.920485 -1.458617 5.5 0 5.5 
+z
+" style="stroke: #23373b"/>
+    </defs>
+    <g clip-path="url(#pa439021432)">
+     <use xlink:href="#m37d7301c7d" x="616.22129" y="235.6704" style="fill: #23373b; stroke: #23373b"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa439021432">
+   <rect x="83.16" y="38.808" width="650.16" height="254.016"/>
+  </clipPath>
+ </defs>
+</svg>

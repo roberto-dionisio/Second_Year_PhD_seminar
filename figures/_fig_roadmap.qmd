@@ -1,0 +1,80 @@
+```{=html}
+<svg class="roadmap-fig" viewBox="0 0 1150 470" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="575.0" cy="262.0" r="128.0" fill="none" stroke="#e3e6e6" stroke-width="50.0"/>
+  <g class="fragment fade-out" data-fragment-index="2">
+    <g class="fragment draw-line" data-fragment-index="0" style="--len:394.97">
+      <path d="M 571.43 134.05 A 128.00 128.00 0 0 0 571.43 389.95" fill="none" stroke="#3B7EA1" stroke-width="50.0" stroke-linecap="butt"/>
+    </g>
+  </g>
+  <g class="fragment" data-fragment-index="0"><text x="547.0" y="46" text-anchor="end" font-size="33" font-weight="400" fill="#2C6A8C">Topological observables</text><text x="547.0" y="74" text-anchor="end" font-size="19" fill="#55696F">what QCD topology tells us</text></g>
+  <g class="fragment fade-out" data-fragment-index="3">
+    <g class="fragment draw-line" data-fragment-index="1" style="--len:394.97">
+      <path d="M 578.57 134.05 A 128.00 128.00 0 0 1 578.57 389.95" fill="none" stroke="#EB811B" stroke-width="50.0" stroke-linecap="butt"/>
+    </g>
+  </g>
+  <g class="fragment" data-fragment-index="1"><text x="603.0" y="46" text-anchor="start" font-size="33" font-weight="400" fill="#D4700F">Algorithmic challenges</text><text x="603.0" y="74" text-anchor="start" font-size="19" fill="#55696F">how to sample it at all</text></g>
+  <line x1="575.0" y1="18" x2="575.0" y2="82" stroke="#C9D2D5" stroke-width="1.5"/>
+  <g class="fragment draw-line seq" data-fragment-index="2" style="--len:126.89; --d:0.30s">
+    <path d="M 571.43 134.05 A 128.00 128.00 0 0 0 465.98 194.93" fill="none" stroke="#1E5373" stroke-width="50.0" stroke-linecap="butt"/>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="2" style="--d:0.55s">
+    <polyline points="495.5,124.3 487.5,110.4 381.0,110.4" fill="none" stroke="#1E5373" stroke-width="2"/>
+    <circle cx="381.0" cy="110.4" r="5" fill="#1E5373"/>
+    <text x="365.0" y="108.4" text-anchor="end" font-size="25" fill="#33474B">Topological rate at finite <tspan font-style='italic'>p</tspan></text>
+    <text x="365.0" y="134.4" text-anchor="end" font-size="18" fill="#55696F">real-time transitions · quenched QCD</text>
+  </g>
+  <g class="fragment draw-line seq" data-fragment-index="2" style="--len:126.89; --d:0.68s">
+    <path d="M 462.40 201.12 A 128.00 128.00 0 0 0 462.40 322.88" fill="none" stroke="#3B7EA1" stroke-width="50.0" stroke-linecap="butt"/>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="2" style="--d:0.93s">
+    <polyline points="416.0,262.0 400.0,262.0 381.0,262.0" fill="none" stroke="#3B7EA1" stroke-width="2"/>
+    <circle cx="381.0" cy="262.0" r="5" fill="#3B7EA1"/>
+    <text x="365.0" y="260.0" text-anchor="end" font-size="25" fill="#33474B"><tspan font-style='italic'>b</tspan><tspan baseline-shift='sub' font-size='70%'>2</tspan> across the crossover</text>
+    <text x="365.0" y="286.0" text-anchor="end" font-size="18" fill="#55696F">θ-dependence · N<tspan baseline-shift='sub' font-size='70%'>f</tspan> = 2+1 QCD</text>
+  </g>
+  <g class="fragment draw-line seq" data-fragment-index="2" style="--len:126.89; --d:1.06s">
+    <path d="M 465.98 329.07 A 128.00 128.00 0 0 0 571.43 389.95" fill="none" stroke="#86B6CF" stroke-width="50.0" stroke-linecap="butt"/>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="2" style="--d:1.31s">
+    <polyline points="495.5,399.7 487.5,413.6 381.0,413.6" fill="none" stroke="#86B6CF" stroke-width="2"/>
+    <circle cx="381.0" cy="413.6" r="5" fill="#86B6CF"/>
+    <text x="365.0" y="411.6" text-anchor="end" font-size="25" fill="#33474B">Lines of constant physics</text>
+    <text x="365.0" y="437.6" text-anchor="end" font-size="18" fill="#55696F">step scaling + fermion flow</text>
+  </g>
+  <g class="fragment draw-line seq" data-fragment-index="3" style="--len:126.89; --d:0.30s">
+    <path d="M 578.57 134.05 A 128.00 128.00 0 0 1 684.02 194.93" fill="none" stroke="#B5600E" stroke-width="50.0" stroke-linecap="butt"/>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="3" style="--d:0.55s">
+    <polyline points="654.5,124.3 662.5,110.4 769.0,110.4" fill="none" stroke="#B5600E" stroke-width="2"/>
+    <circle cx="769.0" cy="110.4" r="5" fill="#B5600E"/>
+    <text x="785.0" y="108.4" text-anchor="start" font-size="25" fill="#33474B">Normalizing flows</text>
+    <text x="785.0" y="134.4" text-anchor="start" font-size="18" fill="#55696F">learned change of variables · 2D U(1)</text>
+  </g>
+  <g class="fragment draw-line seq" data-fragment-index="3" style="--len:126.89; --d:0.68s">
+    <path d="M 687.60 201.12 A 128.00 128.00 0 0 1 687.60 322.88" fill="none" stroke="#EB811B" stroke-width="50.0" stroke-linecap="butt"/>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="3" style="--d:0.93s">
+    <polyline points="734.0,262.0 750.0,262.0 769.0,262.0" fill="none" stroke="#EB811B" stroke-width="2"/>
+    <circle cx="769.0" cy="262.0" r="5" fill="#EB811B"/>
+    <text x="785.0" y="260.0" text-anchor="start" font-size="25" fill="#33474B">Optimal annealing paths</text>
+    <text x="785.0" y="286.0" text-anchor="start" font-size="18" fill="#55696F">Fisher geometry · CP<tspan baseline-shift='super' font-size='70%'>N−1</tspan></text>
+  </g>
+  <g class="fragment draw-line seq" data-fragment-index="3" style="--len:126.89; --d:1.06s">
+    <path d="M 684.02 329.07 A 128.00 128.00 0 0 1 578.57 389.95" fill="none" stroke="#F3B26B" stroke-width="50.0" stroke-linecap="butt"/>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="3" style="--d:1.31s">
+    <polyline points="654.5,399.7 662.5,413.6 769.0,413.6" fill="none" stroke="#F3B26B" stroke-width="2"/>
+    <circle cx="769.0" cy="413.6" r="5" fill="#F3B26B"/>
+    <text x="785.0" y="411.6" text-anchor="start" font-size="25" fill="#33474B">Out-of-equilibrium exchange</text>
+    <text x="785.0" y="437.6" text-anchor="start" font-size="18" fill="#55696F">O-REX · CP<tspan baseline-shift='super' font-size='70%'>20</tspan></text>
+  </g>
+  <g class="fragment fade-out" data-fragment-index="3">
+    <text x="575.0" y="272.0" text-anchor="middle" font-size="68" fill="#23373B">2</text>
+    <text x="575.0" y="304.0" text-anchor="middle" font-size="22" fill="#55696F">years</text>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="3" style="--d:1.3s">
+    <text x="575.0" y="272.0" text-anchor="middle" font-size="68" fill="#23373B">6</text>
+    <text x="575.0" y="304.0" text-anchor="middle" font-size="22" fill="#55696F">projects</text>
+  </g>
+</svg>
+```

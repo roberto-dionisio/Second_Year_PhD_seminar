@@ -1,0 +1,600 @@
+/*-- scss:defaults --*/
+
+// Layered on top of the metropolis-beamer extension, like the Lattice 2026 and
+// StaND4LQ decks. Same four colours as the figures (figures/talkstyle.py), so
+// slides and plots speak one language:
+//   bulk   dark teal   structure, neutral emphasis
+//   defect orange      the accent; Part II (algorithms)
+//   easy   steel blue  Part I (topological observables)
+//   target crimson     hard / frozen / exponential
+$primary-color: #0c2344;
+$bulk-color:   #23373b;
+$defect-color: #eb811b;
+$easy-color:   #3b7ea1;
+$target-color: #9c162a;
+$muted-color:  #55696f;   // 5.1:1 on the #f1f1f1 slide
+
+// the two halves of the roadmap donut (figures/make_figures.py, fig_roadmap)
+$part1-color: #3b7ea1;
+$part2-color: #eb811b;
+$part1-text:  #2c6a8c;
+$part2-text:  #d4700f;
+
+/*-- scss:rules --*/
+
+// --- one-line asides and leads -------------------------------------------------
+.reveal .note {
+  font-size: 0.72em;
+  color: $muted-color;
+  line-height: 1.5;
+}
+
+.reveal .lead {
+  font-size: 0.82em;
+  color: #33474b;
+}
+
+// --- the result you want them to leave with ----------------------------------
+.reveal .eqbox {
+  display: inline-block;
+  border: 1.5px solid $defect-color;
+  border-radius: 4px;
+  background: rgba(235, 129, 27, 0.06);
+  padding: 0.1em 0.9em;
+  margin: 0.2em 0;
+}
+
+.reveal .bulk   { color: $bulk-color; }
+.reveal .defect { color: $defect-color; }
+.reveal .easy   { color: $easy-color; }
+.reveal .target { color: $target-color; }
+.reveal .muted  { color: $muted-color; }
+.reveal .p1c    { color: $part1-text; }
+.reveal .p2c    { color: $part2-text; }
+
+// --- boxes and arrows (the two orderings of the limits, the flow pipeline) ----
+.reveal .flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  margin: 0.35em 0;
+  font-size: 0.78em;
+}
+
+.reveal .flow .box {
+  border: 1.5px solid $bulk-color;
+  border-radius: 4px;
+  padding: 0.25em 0.9em;
+  color: $bulk-color;
+  white-space: nowrap;
+}
+
+.reveal .flow .box.net {
+  border-color: $defect-color;
+  color: $defect-color;
+  background: rgba(235, 129, 27, 0.06);
+}
+
+.reveal .flow .box.ok {
+  border-color: $easy-color;
+  color: $easy-color;
+  background: rgba(59, 126, 161, 0.06);
+}
+
+.reveal .flow .arrow {
+  color: $muted-color;
+  font-size: 1.3em;
+  line-height: 1;
+}
+
+// Two boxes trading information back and forth: the U-Net training loop.
+.reveal .loop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  margin-top: 0.6em;
+  font-size: 0.74em;
+}
+
+.reveal .loop .box {
+  border: 1.5px solid $bulk-color;
+  border-radius: 4px;
+  padding: 0.3em 1.0em;
+  color: $bulk-color;
+  text-align: center;
+}
+
+.reveal .loop .exchange {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  color: $muted-color;
+  font-size: 0.82em;
+  text-align: center;
+  min-width: 8.5em;
+}
+
+// --- content cards, legend chips, takeaway boxes (from the Pisa deck) ---------
+.reveal .card {
+  border: 1px solid #cdd5db;
+  border-left: 4px solid $easy-color;
+  border-radius: 8px;
+  background: rgba(59, 126, 161, 0.05);
+  padding: 0.45em 0.9em;
+  margin: 0.35em 0;
+  text-align: left;
+}
+.reveal .card.accent {
+  border-left-color: $defect-color;
+  background: rgba(235, 129, 27, 0.06);
+}
+.reveal .card.alert {
+  border-left-color: $target-color;
+  background: rgba(156, 22, 42, 0.05);
+}
+.reveal .card > :first-child { margin-top: 0; }
+.reveal .card > :last-child  { margin-bottom: 0; }
+.reveal .card .hd {
+  display: block;
+  font-weight: 500;
+  color: $bulk-color;
+  margin-bottom: 0.1em;
+}
+
+.reveal .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  border: 1.4px solid $muted-color;
+  border-radius: 999px;
+  padding: 0.16em 0.85em;
+  font-size: 0.7em;
+  white-space: nowrap;
+  color: #33474b;
+  background: rgba(255, 255, 255, 0.5);
+}
+.reveal .chip.wip {
+  border-color: $defect-color;
+  color: $part2-text;
+  background: rgba(235, 129, 27, 0.08);
+}
+
+.reveal .takeaway {
+  display: block;
+  width: max-content;
+  max-width: 94%;
+  margin: 0.5em auto 0;
+  border: 1.6px solid $defect-color;
+  border-radius: 8px;
+  background: rgba(235, 129, 27, 0.08);
+  padding: 0.4em 1.2em;
+  text-align: center;
+  color: #33474b;
+}
+
+// --- small data tables ---------------------------------------------------------
+.reveal table.simstab {
+  margin: 0.3em auto;
+  border-collapse: collapse;
+  font-size: 0.66em;
+  border-top: none;
+  border-bottom: none;
+}
+.reveal table.simstab th,
+.reveal table.simstab td {
+  border: none;
+  border-bottom: 1px solid #d5dbe0;
+  padding: 0.22em 0.75em;
+  text-align: center;
+}
+.reveal table.simstab th {
+  border-bottom: 2px solid $bulk-color;
+  color: $bulk-color;
+  font-weight: 500;
+}
+.reveal table.simstab tr:last-child td { border-bottom: 2px solid $bulk-color; }
+
+// --- figures: fill their column, never taller than the slide -------------------
+// Scoped to .slides so the header logo (lifted out of .slides by the theme's JS)
+// is left alone. Width + max-height together preserve the aspect ratio.
+.reveal figure { margin: 0; }
+
+.reveal .slides img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-height: 56vh;
+}
+
+.reveal .money img { max-height: 64vh; }
+.reveal .slides img.tall  { max-height: 62vh; }
+.reveal .slides img.short { max-height: 44vh; }
+
+// --- animated inline SVG: curves that draw themselves on ------------------------
+// --len is the path length, either written into the markup by make_figures.py
+// (an arc's length is R*dtheta) or measured on load by getTotalLength() in the
+// qmd header. Before its step a group is hidden by reveal's fragment opacity;
+// on its step the stroke unspools from one end.
+.reveal .slides svg.anim-fig {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-height: 56vh;
+  overflow: visible;
+}
+
+.reveal .slides svg .draw-line path {
+  stroke-dasharray: var(--len, 3000);
+  stroke-dashoffset: var(--len, 3000);
+}
+.reveal .slides svg .draw-line.visible path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.9s ease-in-out;
+}
+
+// Wedges that sweep in one after another: each carries its own --d.
+.reveal .slides svg .draw-line.seq.visible path {
+  transition: stroke-dashoffset 0.6s ease-out var(--d, 0s);
+}
+// ...and their labels, which wait for their wedge.
+.reveal .slides section .fragment.seq-fade.visible {
+  transition: opacity 0.45s ease var(--d, 0s), visibility 0s linear var(--d, 0s);
+}
+
+.reveal .slides svg text {
+  font-family: "Fira Sans", Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+// --- the roadmap donut ---------------------------------------------------------
+.reveal .slides svg.roadmap-fig {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 74vh;
+  margin: -0.3em auto 0;
+  overflow: visible;
+}
+.reveal .slides svg.roadmap-fig .draw-line.visible:not(.seq) path {
+  transition: stroke-dashoffset 1.1s ease-in-out;
+}
+// a half dissolves slowly while its three projects sweep in over it
+.reveal .slides svg.roadmap-fig .fragment.fade-out {
+  transition: opacity 0.9s ease, visibility 0s linear 0.9s;
+}
+.reveal .slides svg.roadmap-fig .fragment.fade-out:not(.visible) {
+  transition: opacity 0.3s ease;
+}
+
+// --- section dividers: the same donut, the current project popped out -----------
+.reveal .slides svg.sec-donut {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 54vh;
+  margin: 0 auto;
+  overflow: visible;
+}
+.reveal .slides section.present svg.sec-donut .wedge-off {
+  animation: sec-dim 0.8s ease 0.25s both;
+}
+.reveal .slides section.present svg.sec-donut .wedge-on {
+  animation: sec-pop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+}
+@keyframes sec-dim { from { opacity: 1; } to { opacity: 0.16; } }
+@keyframes sec-pop {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(var(--dx), var(--dy)); }
+}
+
+.reveal .divider .kicker {
+  font-size: 0.6em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 2.2em;
+}
+.reveal .divider .kicker.p1 { color: $part1-text; }
+.reveal .divider .kicker.p2 { color: $part2-text; }
+
+.reveal .divider .ptitle {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 500;
+  font-size: 2.15em;
+  line-height: 1.04;
+  color: $bulk-color;
+  margin: 0.15em 0 0.35em;
+}
+.reveal .divider .question {
+  font-size: 0.92em;
+  font-style: italic;
+  color: #33474b;
+  border-left: 4px solid $muted-color;
+  padding-left: 0.6em;
+}
+.reveal .divider.d1 .question { border-left-color: $part1-color; }
+.reveal .divider.d2 .question { border-left-color: $part2-color; }
+.reveal .divider .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em;
+  margin-top: 1.2em;
+}
+.reveal .divider .with {
+  font-size: 0.62em;
+  color: $muted-color;
+  font-style: italic;
+  margin-top: 1.1em;
+}
+.reveal .slides section.present.divider .ptitle,
+.reveal .slides section.present.divider .question,
+.reveal .slides section.present.divider .chips,
+.reveal .slides section.present.divider .with {
+  animation: div-in 0.7s ease both;
+}
+.reveal .slides section.present.divider .ptitle   { animation-delay: 0.30s; }
+.reveal .slides section.present.divider .question { animation-delay: 0.55s; }
+.reveal .slides section.present.divider .chips    { animation-delay: 0.80s; }
+.reveal .slides section.present.divider .with     { animation-delay: 0.95s; }
+@keyframes div-in {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+// --- the header bar: which half we are in, and the work-in-progress badge ------
+// The extension writes the slide title into the bar as plain text; a small
+// script in the qmd header mirrors the slide's .p1/.p2/.wip classes onto the bar.
+div.reveal-header.p1 { box-shadow: inset 0 -5px 0 $part1-color; }
+div.reveal-header.p2 { box-shadow: inset 0 -5px 0 $part2-color; }
+
+div.reveal-header.wip .header-title h2 { white-space: nowrap; }
+
+div.reveal-header.wip .header-title h2::after {
+  content: "work in progress";
+  display: inline-block;
+  margin-left: 0.9em;
+  padding: 0.12em 0.7em 0.1em;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.36em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  color: #f7b46a;
+  border: 1.5px solid #f7b46a;
+  border-radius: 999px;
+}
+
+// --- summary cards: one per project, coloured like its wedge -------------------
+.reveal .results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em 1.4em;
+  margin-top: 0.3em;
+}
+.reveal .results .colhd {
+  font-size: 0.64em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: -0.1em;
+}
+.reveal .results .rc {
+  border-left: 6px solid #ccc;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 0.4em 0.9em 0.45em;
+  font-size: 0.78em;
+  line-height: 1.38;
+}
+.reveal .results .rc > p { margin: 0; }
+.reveal .results .rc .t {
+  display: block;
+  font-weight: 500;
+  color: $bulk-color;
+  font-size: 1.04em;
+}
+.reveal .results .rc.k1 { border-left-color: #1e5373; }
+.reveal .results .rc.k2 { border-left-color: #3b7ea1; }
+.reveal .results .rc.k3 { border-left-color: #86b6cf; }
+.reveal .results .rc.k4 { border-left-color: #b5600e; }
+.reveal .results .rc.k5 { border-left-color: #eb811b; }
+.reveal .results .rc.k6 { border-left-color: #f3b26b; }
+
+// --- outlook: three numbered tracks ------------------------------------------
+.reveal .tracks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9em;
+  margin-top: 0.6em;
+}
+.reveal .tracks .tr {
+  border-top: 5px solid $muted-color;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 0.6em 0.9em 0.8em;
+  font-size: 0.76em;
+  line-height: 1.42;
+}
+.reveal .tracks .tr.t1 { border-top-color: $part1-color; }
+.reveal .tracks .tr.t2 { border-top-color: #86b6cf; }
+.reveal .tracks .tr.t3 { border-top-color: $part2-color; }
+.reveal .tracks .tr .n {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 2.1em;
+  line-height: 1;
+  color: $muted-color;
+  float: right;
+}
+.reveal .tracks .tr .t {
+  display: block;
+  font-weight: 500;
+  font-size: 1.12em;
+  color: $bulk-color;
+  margin-bottom: 0.3em;
+}
+.reveal .tracks .tr ul { margin: 0 0 0 1.0em; padding: 0; }
+.reveal .tracks .tr li { margin: 0.12em 0; }
+
+// --- footer / slide number: present, quiet ------------------------------------
+.reveal .footer {
+  font-size: 0.5em;
+  color: $muted-color;
+  opacity: 0.8;
+}
+
+.reveal .slide-number {
+  font-size: 0.56em;
+  color: $muted-color;
+  background: transparent;
+}
+
+// Single Pisa cherubino in the header: keep it modest.
+.reveal .header-logo img {
+  max-width: max(78px, 6.5vw);
+  max-height: max(58px, 8vh);
+}
+
+// --- title slide -----------------------------------------------------------------
+.reveal #title-slide h1.title {
+  font-size: 1.75em;
+  line-height: 1.1;
+  margin-bottom: 0.3em;
+}
+
+.reveal #title-slide .quarto-title-authors {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reveal #title-slide .quarto-title-authors::after {
+  content: "Supervisors:  Prof. Massimo D'Elia  ·  Dott. Francesco Sanfilippo";
+  display: block;
+  font-size: 0.64em;
+  font-style: italic;
+  color: $muted-color;
+  margin-top: 0.4em;
+}
+
+// The Unipi wordmark, injected as an <img> by the script in the qmd header and
+// pinned to the lower right (overriding the generic img sizing).
+.reveal #title-slide .title-logos {
+  position: absolute;
+  right: 3%;
+  bottom: 5%;
+  width: min(30%, 360px);
+  height: auto;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+}
+
+// --- references -----------------------------------------------------------------
+.reveal .refs {
+  font-size: 0.66em;
+  line-height: 1.6;
+}
+.reveal .refs .k { color: $muted-color; }
+
+// --- the live toy flow (figures/toyflow/toyflow.js) ------------------------------
+.reveal .toyflow {
+  width: 100%;
+  margin-top: 0.1em;
+}
+.reveal .toyflow canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 76vh;
+  object-fit: contain;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+// --- b2: the censored result (figures/_fig_b2_censored.qmd) -------------------------
+// Three transparent SVG layers with identical geometry, stacked; the middle of
+// the curve is covered by an "embargo" card that stamps in on the last click.
+.reveal .censored-fig {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+// The base layer sets the box; every other layer and the card are placed in it.
+// !important: the generic `.slides img` caps (max-height, width) must not reach
+// these, or the layers letterbox differently and drift apart.
+.reveal .censored-fig img.layer {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+.reveal .censored-fig img.layer:first-child {
+  position: relative;
+  width: 100% !important;
+  height: auto !important;
+}
+.reveal .censored-fig img.layer:not(:first-child) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.reveal .censored-fig .embargo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15em;
+  border: 1.6px dashed rgba(85, 105, 111, 0.65);
+  border-radius: 12px;
+  background:
+    repeating-linear-gradient(-45deg,
+      rgba(35, 55, 59, 0.045) 0 12px, rgba(35, 55, 59, 0.10) 12px 24px),
+    rgba(241, 241, 241, 0.92);
+  backdrop-filter: blur(6px);
+  color: #33474b;
+  text-align: center;
+  overflow: hidden;
+}
+.reveal .censored-fig .embargo .lock { width: 1.5em; height: 1.8em; color: #55696f; margin-bottom: 0.2em; }
+.reveal .censored-fig .embargo .em-k {
+  font-size: 0.5em; letter-spacing: 0.18em; text-transform: uppercase; color: #55696f;
+}
+.reveal .censored-fig .embargo .em-name {
+  font-family: "Yanone Kaffeesatz", sans-serif; font-weight: 500;
+  font-size: 1.45em; line-height: 1.05; color: #23373b;
+}
+.reveal .censored-fig .embargo .em-sub { font-size: 0.66em; color: #2c6a8c; font-weight: 400; }
+.reveal .censored-fig .embargo .em-stamp {
+  position: absolute;
+  right: 6%;
+  top: 9%;
+  transform: rotate(9deg);
+  padding: 0.05em 0.5em;
+  border: 2.5px solid rgba(156, 22, 42, 0.75);
+  border-radius: 6px;
+  color: rgba(156, 22, 42, 0.8);
+  font-size: 0.5em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+// a rubber stamp: comes down from slightly above, a touch rotated, and lands
+.reveal .slides section .fragment.stamp {
+  opacity: 0;
+  transform: scale(1.18) rotate(-2.5deg);
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+.reveal .slides section .fragment.stamp.visible {
+  opacity: 1;
+  transform: none;
+}

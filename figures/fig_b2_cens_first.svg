@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="756pt" height="352.8pt" viewBox="0 0 756 352.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-14T16:47:23.923460</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 352.8 
+L 756 352.8 
+L 756 0 
+L 0 0 
+L 0 352.8 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="LineCollection_1">
+    <path d="M 208.414839 134.064 
+L 208.414839 70.56 
+" clip-path="url(#p2144eef901)" style="fill: none; stroke: #23373b; stroke-width: 2.2"/>
+   </g>
+   <g id="line2d_1">
+    <defs>
+     <path id="m5bc9379da1" d="M 5 0 
+L -5 -0 
+" style="stroke: #23373b"/>
+    </defs>
+    <g clip-path="url(#p2144eef901)">
+     <use xlink:href="#m5bc9379da1" x="208.414839" y="134.064" style="fill: #23373b; stroke: #23373b"/>
+    </g>
+   </g>
+   <g id="line2d_2">
+    <g clip-path="url(#p2144eef901)">
+     <use xlink:href="#m5bc9379da1" x="208.414839" y="70.56" style="fill: #23373b; stroke: #23373b"/>
+    </g>
+   </g>
+   <g id="text_1">
+    <!-- $-0.031(12)$ -->
+    <g style="fill: #3b7ea1" transform="translate(123.692839 125.103783) scale(0.17 -0.17)">
+     <defs>
+      <path id="FiraSans-Light-2212" d="M 442 1958 
+L 442 2285 
+L 2714 2285 
+L 2714 1958 
+L 442 1958 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-30" d="M 1760 4326 
+Q 2419 4326 2758 3766 
+Q 3098 3206 3098 2125 
+Q 3098 1050 2755 490 
+Q 2413 -70 1760 -70 
+Q 1101 -70 761 490 
+Q 422 1050 422 2131 
+Q 422 3213 761 3769 
+Q 1101 4326 1760 4326 
+z
+M 1760 4019 
+Q 806 4019 806 2131 
+Q 806 237 1760 237 
+Q 2227 237 2467 697 
+Q 2707 1158 2707 2125 
+Q 2707 3091 2467 3555 
+Q 2227 4019 1760 4019 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-2e" d="M 659 538 
+Q 794 538 880 451 
+Q 966 365 966 237 
+Q 966 102 880 16 
+Q 794 -70 659 -70 
+Q 531 -70 441 19 
+Q 352 109 352 237 
+Q 352 365 441 451 
+Q 531 538 659 538 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-33" d="M 1414 4326 
+Q 1773 4326 2038 4185 
+Q 2304 4045 2445 3805 
+Q 2586 3565 2586 3264 
+Q 2586 2848 2352 2589 
+Q 2118 2330 1747 2266 
+Q 2163 2246 2435 1968 
+Q 2707 1690 2707 1203 
+Q 2707 832 2540 544 
+Q 2374 256 2064 93 
+Q 1754 -70 1350 -70 
+Q 608 -70 128 480 
+L 365 691 
+Q 582 454 816 348 
+Q 1050 243 1338 243 
+Q 1798 243 2060 505 
+Q 2323 768 2323 1197 
+Q 2323 2093 1363 2093 
+L 1082 2093 
+L 1133 2394 
+L 1338 2394 
+Q 1702 2394 1958 2614 
+Q 2214 2835 2214 3245 
+Q 2214 3597 1990 3805 
+Q 1766 4013 1395 4013 
+Q 1126 4013 902 3920 
+Q 678 3827 448 3616 
+L 250 3846 
+Q 506 4090 787 4208 
+Q 1069 4326 1414 4326 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-31" d="M 1869 4256 
+L 1869 0 
+L 1498 0 
+L 1498 3846 
+L 448 3194 
+L 275 3469 
+L 1549 4256 
+L 1869 4256 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-28" d="M 1728 5203 
+Q 1389 4698 1184 4304 
+Q 979 3910 854 3404 
+Q 730 2899 730 2240 
+Q 730 1581 854 1075 
+Q 979 570 1184 176 
+Q 1389 -218 1728 -723 
+L 1491 -877 
+Q 1094 -320 867 77 
+Q 640 474 493 1005 
+Q 346 1536 346 2240 
+Q 346 2944 493 3475 
+Q 640 4006 867 4403 
+Q 1094 4800 1491 5357 
+L 1728 5203 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-32" d="M 1440 4326 
+Q 1978 4326 2294 4012 
+Q 2611 3699 2611 3206 
+Q 2611 2790 2438 2425 
+Q 2266 2061 1898 1625 
+Q 1530 1190 710 326 
+L 2726 326 
+L 2675 0 
+L 275 0 
+L 275 314 
+Q 1152 1248 1533 1699 
+Q 1914 2150 2070 2480 
+Q 2227 2810 2227 3187 
+Q 2227 3565 2006 3789 
+Q 1786 4013 1421 4013 
+Q 1126 4013 899 3891 
+Q 672 3770 467 3526 
+L 211 3718 
+Q 467 4032 764 4179 
+Q 1062 4326 1440 4326 
+z
+" transform="scale(0.015625)"/>
+      <path id="FiraSans-Light-29" d="M 582 5357 
+Q 979 4800 1206 4403 
+Q 1434 4006 1581 3475 
+Q 1728 2944 1728 2240 
+Q 1728 1536 1581 1005 
+Q 1434 474 1206 77 
+Q 979 -320 582 -877 
+L 346 -723 
+Q 685 -218 889 176 
+Q 1094 570 1219 1075 
+Q 1344 1581 1344 2240 
+Q 1344 2899 1219 3404 
+Q 1094 3910 889 4304 
+Q 685 4698 346 5203 
+L 582 5357 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#FiraSans-Light-2212" transform="translate(0 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-30" transform="translate(49.299988 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-2e" transform="translate(104.299973 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-30" transform="translate(124.999969 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-33" transform="translate(179.999954 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-31" transform="translate(228.599945 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-28" transform="translate(269.899933 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-31" transform="translate(302.299927 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-32" transform="translate(343.599915 0.296875)"/>
+     <use xlink:href="#FiraSans-Light-29" transform="translate(391.499908 0.296875)"/>
+    </g>
+   </g>
+   <g id="line2d_3">
+    <defs>
+     <path id="m75da197192" d="M 0 5.5 
+C 1.458617 5.5 2.857689 4.920485 3.889087 3.889087 
+C 4.920485 2.857689 5.5 1.458617 5.5 0 
+C 5.5 -1.458617 4.920485 -2.857689 3.889087 -3.889087 
+C 2.857689 -4.920485 1.458617 -5.5 0 -5.5 
+C -1.458617 -5.5 -2.857689 -4.920485 -3.889087 -3.889087 
+C -4.920485 -2.857689 -5.5 -1.458617 -5.5 0 
+C -5.5 1.458617 -4.920485 2.857689 -3.889087 3.889087 
+C -2.857689 4.920485 -1.458617 5.5 0 5.5 
+z
+" style="stroke: #23373b"/>
+    </defs>
+    <g clip-path="url(#p2144eef901)">
+     <use xlink:href="#m75da197192" x="208.414839" y="102.312" style="fill: #23373b; stroke: #23373b"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2144eef901">
+   <rect x="83.16" y="38.808" width="650.16" height="254.016"/>
+  </clipPath>
+ </defs>
+</svg>

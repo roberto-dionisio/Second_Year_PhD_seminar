@@ -1,0 +1,12 @@
+```{=html}
+<svg class="sec-donut" viewBox="-20 -20 400 400" xmlns="http://www.w3.org/2000/svg">
+  <path class="wedge-off" style="--dx:-8.0px; --dy:-13.9px" d="M 176.76 64.05 A 116.00 116.00 0 0 0 81.20 119.22" fill="none" stroke="#1E5373" stroke-width="46.0" stroke-linecap="butt"/>
+  <path class="wedge-off" style="--dx:-16.0px; --dy:0.0px" d="M 77.96 124.83 A 116.00 116.00 0 0 0 77.96 235.17" fill="none" stroke="#3B7EA1" stroke-width="46.0" stroke-linecap="butt"/>
+  <path class="wedge-on" style="--dx:-8.0px; --dy:13.9px" d="M 81.20 240.78 A 116.00 116.00 0 0 0 176.76 295.95" fill="none" stroke="#86B6CF" stroke-width="46.0" stroke-linecap="butt"/>
+  <path class="wedge-off" style="--dx:8.0px; --dy:-13.9px" d="M 183.24 64.05 A 116.00 116.00 0 0 1 278.80 119.22" fill="none" stroke="#B5600E" stroke-width="46.0" stroke-linecap="butt"/>
+  <path class="wedge-off" style="--dx:16.0px; --dy:0.0px" d="M 282.04 124.83 A 116.00 116.00 0 0 1 282.04 235.17" fill="none" stroke="#EB811B" stroke-width="46.0" stroke-linecap="butt"/>
+  <path class="wedge-off" style="--dx:8.0px; --dy:13.9px" d="M 278.80 240.78 A 116.00 116.00 0 0 1 183.24 295.95" fill="none" stroke="#F3B26B" stroke-width="46.0" stroke-linecap="butt"/>
+  <text x="180.0" y="194.0" text-anchor="middle" font-size="76" fill="#23373B">3</text>
+  <text x="180.0" y="226.0" text-anchor="middle" font-size="20" fill="#55696F">of 6</text>
+</svg>
+```

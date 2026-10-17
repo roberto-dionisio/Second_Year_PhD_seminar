@@ -1,0 +1,28 @@
+```{=html}
+<svg class="anim-fig orex-fig" viewBox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+  <line x1="70.0" y1="290.0" x2="590.0" y2="290.0" stroke="#33474B" stroke-width="1.6"/>
+  <line x1="70.0" y1="290.0" x2="70.0" y2="30.0" stroke="#33474B" stroke-width="1.6"/>
+  <text x="590.0" y="318.0" text-anchor="end" font-size="20" fill="#55696F">protocol step k</text>
+  <text x="56.0" y="24.0" text-anchor="start" font-size="20" fill="#55696F">defect coupling C</text>
+  <text x="58.0" y="76.0" text-anchor="end" font-size="20" fill="#9C162A">C<tspan baseline-shift="sub" font-size="70%">r</tspan></text>
+  <text x="58.0" y="256.0" text-anchor="end" font-size="20" fill="#3B7EA1">C<tspan baseline-shift="sub" font-size="70%">s</tspan></text>
+  <g class="fragment semi-fade-out" data-fragment-index="1">
+    <g class="fragment draw-line" data-fragment-index="0" style="--len:720">
+      <path d="M 80.0 70.0 L 330.0 70.0 L 330.1 250.0 L 585.0 250.0" fill="none" stroke="#9C162A" stroke-width="3"/>
+    </g>
+    <g class="fragment draw-line" data-fragment-index="0" style="--len:720">
+      <path d="M 80.0 250.0 L 330.0 250.0 L 330.1 70.0 L 585.0 70.0" fill="none" stroke="#3B7EA1" stroke-width="3"/>
+    </g>
+    <g class="fragment" data-fragment-index="0"><text x="84.0" y="278.0" font-size="19" fill="#55696F">standard swap: one jump</text></g>
+  </g>
+  <g class="fragment draw-line" data-fragment-index="1" style="--len:655.0">
+    <path d="M 110.0 70.0 L 183.3 70.0 L 183.3 100.0 L 256.7 100.0 L 256.7 130.0 L 330.0 130.0 L 330.0 160.0 L 403.3 160.0 L 403.3 190.0 L 476.7 190.0 L 476.7 220.0 L 550.0 220.0 L 550.0 250.0 L 585.0 250.0" fill="none" stroke="#9C162A" stroke-width="3.4" stroke-linejoin="round"/>
+  </g>
+  <g class="fragment draw-line" data-fragment-index="1" style="--len:655.0">
+    <path d="M 110.0 250.0 L 183.3 250.0 L 183.3 220.0 L 256.7 220.0 L 256.7 190.0 L 330.0 190.0 L 330.0 160.0 L 403.3 160.0 L 403.3 130.0 L 476.7 130.0 L 476.7 100.0 L 550.0 100.0 L 550.0 70.0 L 585.0 70.0" fill="none" stroke="#3B7EA1" stroke-width="3.4" stroke-linejoin="round"/>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="1" style="--d:0.9s">
+    <text x="585.0" y="54.0" text-anchor="end" font-size="19" fill="#33474B">n<tspan baseline-shift="sub" font-size="70%">step</tspan> = 6 jumps, relaxation on each flat</text>
+  </g>
+</svg>
+```

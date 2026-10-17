@@ -1,0 +1,4 @@
+project:
+  title: "Second-year PhD seminar"
+  render:
+    - second_year_seminar.qmd

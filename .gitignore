@@ -1,0 +1,24 @@
+# ---- OS / editor junk -------------------------------------------------------
+.DS_Store
+**/.DS_Store
+*.swp
+*~
+
+# ---- local tooling ------------------------------------------------------------
+.claude/
+/.quarto/
+**/*.quarto_ipynb
+
+# ---- python build scripts (not part of the deck) -----------------------------
+*.py
+*.py[cod]
+__pycache__/
+
+# ---- rehearsal material -------------------------------------------------------
+talk_script*
+sync_notes.py
+
+# ---- source data for the fermion-flow backup slides ---------------------------
+# the three figures it needs live in figures/backup/; everything else here
+# (raw data, notes, reference material) stays local
+/presentation_handoff/

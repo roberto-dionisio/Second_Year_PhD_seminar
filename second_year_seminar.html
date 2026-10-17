@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="second_year_seminar_files/libs/clipboard/clipboard.min.js"></script>
+<script src="second_year_seminar_files/libs/quarto-html/tabby.min.js"></script>
+<script src="second_year_seminar_files/libs/quarto-html/popper.min.js"></script>
+<script src="second_year_seminar_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="second_year_seminar_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="second_year_seminar_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="second_year_seminar_files/libs/quarto-html/quarto-syntax-highlighting-f8b45d2e6062d3f0773618a8522056e4.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
+
+  <meta name="author" content="Roberto Dionisio">
+  <meta name="dcterms.date" content="2026-10-17">
+  <title>Topological observables in lattice QCD and the sampling problem</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="second_year_seminar_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="second_year_seminar_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="second_year_seminar_files/libs/revealjs/dist/theme/quarto-89b437884f6e4e56095ba48ea8374dce.css">
+  <link href="second_year_seminar_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="second_year_seminar_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="second_year_seminar_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="second_year_seminar_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        packages: {'[+]': ['ams', 'color']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      loader: { load: ['[tex]/color'] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+  <script>
+    // Curves of the reused Lattice 2026 overlay (slide 3) have no --len in
+    // their markup: measure each path once it is laid out. Re-run on slide
+    // changes, since getTotalLength() reads 0 on a slide never shown.
+    // Paths that already carry --len (the donuts) are left alone.
+    (function () {
+      function setLens() {
+        document.querySelectorAll('svg.anim-fig .draw-line path').forEach(function (p) {
+          if (p.closest('[style*="--len"]')) return;
+          var L = p.getTotalLength();
+          if (L > 0) p.style.setProperty('--len', Math.ceil(L));
+        });
+      }
+      window.addEventListener('load', function () {
+        setLens();
+        if (window.Reveal && Reveal.on) {
+          Reveal.on('ready', setLens);
+          Reveal.on('slidechanged', setLens);
+        }
+      });
+    })();
+  </script>
+  <script>
+    // The header bar is shared by all slides. Mirror the current slide's
+    // classes onto it: .p1/.p2 colour its lower rule by half of the talk,
+    // .wip adds the "work in progress" badge after the title (theme.scss).
+    (function () {
+      function sync() {
+        var h = document.querySelector('div.reveal-header');
+        var s = window.Reveal && Reveal.getCurrentSlide();
+        if (!h || !s) return;
+        ['p1', 'p2', 'wip'].forEach(function (c) {
+          h.classList.toggle(c, s.classList.contains(c));
+        });
+      }
+      (function wire() {
+        if (!(window.Reveal && Reveal.on)) { setTimeout(wire, 100); return; }
+        Reveal.on('ready', sync);
+        Reveal.on('slidechanged', sync);
+        setTimeout(sync, 300);
+      })();
+    })();
+  </script>
+  <script>
+    // Title slide: the Unipi wordmark in the lower right, as a real <img>
+    // (a reveal background would tint the title text).
+    window.addEventListener('load', function () {
+      var ts = document.getElementById('title-slide');
+      if (ts && !ts.querySelector('.title-logos')) {
+        var img = document.createElement('img');
+        img.className = 'title-logos';
+        img.src = 'marchio_unipi_orizz_pant541.png';
+        img.alt = 'University of Pisa';
+        ts.appendChild(img);
+      }
+    });
+  </script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Topological observables in lattice QCD and the sampling problem</h1>
+  <p class="subtitle"><span class="workshop" style="display:block;text-align:left">Second-year PhD seminar · Dottorato in Fisica, Università di Pisa</span></p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Roberto Dionisio 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:roberto.dionisio@phd.unipi.it">roberto.dionisio@phd.unipi.it</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Università di Pisa &amp; INFN, Sezione di Pisa
+          </p>
+    </div>
+</div>
+
+  <p class="date">October 17, 2026</p>
+</section>
+<section id="θ-dependence-qcd-topology-and-axion-physics" class="slide level2">
+<h2>θ-dependence: QCD topology and Axion Physics</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div style="font-size:0.84em; margin-top:0.4em">
+<p>Gauge fields carry an <strong>integer</strong> topological charge</p>
+<p><span class="math display">\[Q=\frac{1}{32\pi^2}\!\int\! d^4x\,\varepsilon_{\mu\nu\rho\sigma}\,\mathrm{Tr}\,G_{\mu\nu}G_{\rho\sigma}\;\in\mathbb{Z}\]</span></p>
+<p>and all of <span class="math inline">\(\theta\)</span>-physics sits in the free energy</p>
+<p><span class="math display">\[F(\theta,T)-F(0,T)=\tfrac12\chi(T)\,\theta^2\big[1+b_2(T)\,\theta^2+\dots\big]\]</span></p>
+<p><span class="math display">\[\chi=\frac{\langle Q^2\rangle}{V_4},\qquad b_2=-\frac{\langle Q^4\rangle-3\langle Q^2\rangle^2}{12\,\langle Q^2\rangle}\]</span></p>
+</div>
+<div class="note" style="margin-top:0.2em">
+<p>Non-perturbative: the lattice is the only first-principles tool.</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="fragment">
+<div class="lead" style="margin-top:0.3em; margin-bottom:0.2em">
+<p><strong>The QCD axion</strong> needs them <span class="defect" style=""><strong>at high <span class="math inline">\(T\)</span></strong></span>: <span style=";color: gray;">[1]</span></p>
+</div>
+</div>
+<div class="fragment card" style="font-size:0.86em">
+<p><span class="hd" style="">Mass</span> <span class="math inline">\(m_a^2 f_a^2=\chi(T)\)</span></p>
+</div>
+<div class="fragment card" style="font-size:0.86em">
+<p><span class="hd" style="">Relic abundance: misalignment</span> <span class="math inline">\(\chi(T)\)</span> and <span class="math inline">\(b_2(T)\)</span> over a <strong>range</strong> of temperatures</p>
+</div>
+<div class="fragment card accent" style="font-size:0.86em">
+<p><span class="hd" style="">Thermal production: the source term</span> <span class="math inline">\(\Gamma_{\rm top}(\omega,\vec p)=\displaystyle\int\! dt\,d^3x\,e^{i x_\mu p^\mu}\langle q(x)\,q(0)\rangle_T\)</span></p>
+</div>
+</div></div>
+<div class="fragment takeaway" style="margin-top:0.6em">
+<p>All of them are needed <strong>well above</strong> <span class="math inline">\(T_c\)</span> <span class="math inline">\(\;\Longrightarrow\;\)</span> <strong>fine</strong> lattice spacings</p>
+</div>
+</section>
+<section id="the-problem-topological-freezing" class="slide level2">
+<h2>The Problem: topological freezing</h2>
+<div class="columns">
+<div class="column" style="width:44%;">
+<div style="font-size:0.9em; margin-top:0.6em">
+<p>At fixed <span class="math inline">\(N_\tau\)</span>, <span class="math inline">\(\;T=\dfrac{1}{N_\tau\, a}\)</span>: <br> high <span class="math inline">\(T\)</span> <span class="math inline">\(\Longleftrightarrow\)</span> <span class="math inline">\(a\to 0\)</span></p>
+</div>
+<div class="fragment" data-fragment-index="0" style="margin-top:0.8em">
+<p>Standard critical slowing down</p>
+<p><span class="math display">\[\tau_{\rm int}(\mathcal O)\sim a^{-z}\]</span></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p>Topological freezing <span style=";color: gray;">[2]</span></p>
+<p><span class="math display">\[\tau_{\rm int}(Q)\sim e^{\,c/a}\]</span></p>
+</div>
+</div><div class="column" style="width:56%;">
+<svg class="anim-fig" xlink="http://www.w3.org/1999/xlink" viewbox="0 0 381.17 263.752644" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:rdf xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+    <dc:date>2026-07-17T19:34:52.787146</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:agent>
+    </dc:creator>
+   </cc:work>
+  </rdf:rdf>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 263.752644 
+L 381.17 263.752644 
+L 381.17 0 
+L 0 0 
+L 0 263.752644 
+z
+" style="fill: none"></path>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 22.61 223.2 
+L 379.73 223.2 
+L 379.73 1.44 
+L 22.61 1.44 
+L 22.61 223.2 
+z
+" style="fill: none"></path>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="text_1">
+     <!-- $1/a$ -->
+     <g style="fill: #33474b" transform="translate(192.92 235.45) scale(0.11 -0.11)">
+      <defs>
+       <path id="FiraSans-Light-31" d="M 1869 4256 
+L 1869 0 
+L 1498 0 
+L 1498 3846 
+L 448 3194 
+L 275 3469 
+L 1549 4256 
+L 1869 4256 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Light-2f" d="M 2246 5139 
+L 2566 5056 
+L 1082 -640 
+L 762 -557 
+L 2246 5139 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-LightItalic-61" d="M 2093 3418 
+Q 2406 3418 2656 3347 
+Q 2906 3277 3168 3142 
+L 2816 730 
+Q 2803 659 2803 538 
+Q 2803 403 2851 323 
+Q 2899 243 3014 192 
+L 2906 -70 
+Q 2682 -19 2566 118 
+Q 2451 256 2458 538 
+Q 2266 256 2000 93 
+Q 1734 -70 1427 -70 
+Q 928 -70 649 278 
+Q 371 627 371 1229 
+Q 371 1728 550 2233 
+Q 730 2739 1117 3078 
+Q 1504 3418 2093 3418 
+z
+M 2106 3117 
+Q 1651 3117 1347 2822 
+Q 1043 2528 905 2093 
+Q 768 1658 768 1229 
+Q 768 742 953 492 
+Q 1139 243 1485 243 
+Q 1786 243 2026 422 
+Q 2266 602 2483 947 
+L 2771 2963 
+Q 2464 3117 2106 3117 
+z
+" transform="scale(0.015625)"></path>
+      </defs>
+      <use href="#FiraSans-Light-31" transform="translate(0 0.703125)"></use>
+      <use href="#FiraSans-Light-2f" transform="translate(41.299988 0.703125)"></use>
+      <use href="#FiraSans-LightItalic-61" transform="translate(93.299973 0.703125)"></use>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m352661e5aa" d="M 0 0 
+L -2 0 
+" style="stroke: #33474b; stroke-width: 0.6"></path>
+      </defs>
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="223.2" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_2">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="219.628445" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_3">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="195.415164" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_4">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="183.120177" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_5">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="174.396746" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_6">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="167.630327" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_7">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="162.10176" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_8">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="157.427423" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_9">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="153.378329" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_10">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="149.806774" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_11">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="125.593492" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_12">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="113.298506" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_13">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="104.575075" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_14">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="97.808656" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_15">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="92.280089" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_16">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="87.605752" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_17">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="83.556657" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_18">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="79.985103" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_19">
+     <g id="line2d_19">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="55.771821" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_20">
+     <g id="line2d_20">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="43.476835" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_21">
+     <g id="line2d_21">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="34.753403" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_22">
+     <g id="line2d_22">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="27.986984" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_23">
+     <g id="line2d_23">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="22.458417" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_24">
+     <g id="line2d_24">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="17.784081" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_25">
+     <g id="line2d_25">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="13.734986" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_26">
+     <g id="line2d_26">
+      <g>
+       <use href="#m352661e5aa" x="22.61" y="10.163431" style="fill: #33474b; stroke: #33474b; stroke-width: 0.6"></use>
+      </g>
+     </g>
+    </g>
+    <g id="text_2">
+     <!-- $\tau$   (log scale) -->
+     <g style="fill: #33474b" transform="translate(10.79 144.605) rotate(-90) scale(0.11 -0.11)">
+      <defs>
+       <path id="FiraSans-LightItalic-3c4" d="M 1395 781 
+Q 1382 640 1382 602 
+Q 1382 448 1436 368 
+Q 1491 288 1626 230 
+L 1485 -51 
+Q 1229 32 1120 176 
+Q 1011 320 1011 570 
+Q 1011 627 1024 781 
+L 1338 3034 
+L 826 3034 
+Q 582 3034 454 3021 
+Q 326 3008 192 2963 
+L 141 3264 
+Q 262 3309 435 3328 
+Q 608 3347 883 3347 
+L 2963 3347 
+L 2912 3034 
+L 1709 3034 
+L 1395 781 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Regular-20" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Regular-28" d="M 1818 5152 
+Q 1485 4659 1289 4272 
+Q 1094 3885 982 3392 
+Q 870 2899 870 2240 
+Q 870 1587 982 1094 
+Q 1094 602 1289 208 
+Q 1485 -186 1818 -672 
+L 1446 -928 
+Q 1024 -326 797 61 
+Q 570 448 413 989 
+Q 256 1530 256 2240 
+Q 256 2950 413 3491 
+Q 570 4032 797 4419 
+Q 1024 4806 1446 5408 
+L 1818 5152 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Regular-6c" d="M 1280 -77 
+Q 954 -77 765 118 
+Q 576 314 576 666 
+L 576 4730 
+L 1165 4800 
+L 1165 678 
+Q 1165 538 1213 474 
+Q 1261 410 1376 410 
+Q 1498 410 1594 448 
+L 1747 38 
+Q 1536 -77 1280 -77 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Regular-6f" d="M 1875 3450 
+Q 2586 3450 2979 2976 
+Q 3373 2502 3373 1690 
+Q 3373 1165 3193 765 
+Q 3014 365 2675 144 
+Q 2336 -77 1869 -77 
+Q 1158 -77 761 396 
+Q 365 870 365 1683 
+Q 365 2208 544 2608 
+Q 723 3008 1062 3229 
+Q 1402 3450 1875 3450 
+z
+M 1875 2976 
+Q 998 2976 998 1683 
+Q 998 397 1869 397 
+Q 2739 397 2739 1690 
+Q 2739 2976 1875 2976 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Regular-67" d="M 3328 3219 
+Q 3136 3155 2905 3136 
+Q 2675 3117 2342 3117 
+Q 2938 2848 2938 2266 
+Q 2938 1760 2592 1440 
+Q 2246 1120 1651 1120 
+Q 1421 1120 1222 1184 
+Q 1146 1133 1101 1046 
+Q 1056 960 1056 870 
+Q 1056 595 1498 595 
+L 2035 595 
+Q 2374 595 2636 473 
+Q 2899 352 3043 141 
+Q 3187 -70 3187 -339 
+Q 3187 -832 2784 -1097 
+Q 2381 -1363 1606 -1363 
+Q 1062 -1363 745 -1251 
+Q 429 -1139 294 -915 
+Q 160 -691 160 -339 
+L 691 -339 
+Q 691 -544 768 -662 
+Q 845 -781 1043 -841 
+Q 1242 -902 1606 -902 
+Q 2138 -902 2365 -771 
+Q 2592 -640 2592 -378 
+Q 2592 -141 2413 -19 
+Q 2234 102 1914 102 
+L 1382 102 
+Q 954 102 733 284 
+Q 512 467 512 742 
+Q 512 909 608 1062 
+Q 704 1216 883 1338 
+Q 589 1491 451 1718 
+Q 314 1946 314 2272 
+Q 314 2611 483 2880 
+Q 653 3149 950 3299 
+Q 1248 3450 1613 3450 
+Q 2010 3443 2278 3478 
+Q 2547 3514 2723 3574 
+Q 2899 3635 3155 3750 
+L 3328 3219 
+z
+M 1613 3027 
+Q 1280 3027 1097 2819 
+Q 915 2611 915 2272 
+Q 915 1926 1100 1718 
+Q 1286 1510 1626 1510 
+Q 1971 1510 2153 1712 
+Q 2336 1914 2336 2278 
+Q 2336 3027 1613 3027 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Regular-73" d="M 1523 3450 
+Q 1869 3450 2144 3354 
+Q 2419 3258 2669 3066 
+L 2419 2694 
+Q 2189 2842 1981 2912 
+Q 1773 2982 1542 2982 
+Q 1254 2982 1088 2864 
+Q 922 2746 922 2541 
+Q 922 2336 1078 2221 
+Q 1235 2106 1645 1997 
+Q 2208 1856 2486 1613 
+Q 2765 1370 2765 947 
+Q 2765 448 2377 185 
+Q 1990 -77 1434 -77 
+Q 666 -77 160 365 
+L 474 723 
+Q 902 397 1421 397 
+Q 1754 397 1949 534 
+Q 2144 672 2144 909 
+Q 2144 1082 2073 1187 
+Q 2003 1293 1830 1373 
+Q 1658 1453 1325 1542 
+Q 787 1683 547 1920 
+Q 307 2157 307 2522 
+Q 307 2784 464 2998 
+Q 621 3213 899 3331 
+Q 1178 3450 1523 3450 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Regular-63" d="M 1837 3450 
+Q 2138 3450 2387 3363 
+Q 2637 3277 2867 3085 
+L 2586 2714 
+Q 2406 2842 2236 2902 
+Q 2067 2963 1862 2963 
+Q 1453 2963 1225 2636 
+Q 998 2310 998 1670 
+Q 998 1030 1222 726 
+Q 1446 422 1862 422 
+Q 2061 422 2227 483 
+Q 2394 544 2598 678 
+L 2867 294 
+Q 2406 -77 1837 -77 
+Q 1152 -77 758 384 
+Q 365 845 365 1658 
+Q 365 2195 544 2598 
+Q 723 3002 1052 3226 
+Q 1382 3450 1837 3450 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Regular-61" d="M 2880 787 
+Q 2880 582 2950 483 
+Q 3021 384 3162 333 
+L 3027 -77 
+Q 2765 -45 2605 70 
+Q 2445 186 2368 429 
+Q 2029 -77 1363 -77 
+Q 864 -77 576 204 
+Q 288 486 288 941 
+Q 288 1478 675 1766 
+Q 1062 2054 1773 2054 
+L 2291 2054 
+L 2291 2304 
+Q 2291 2662 2118 2816 
+Q 1946 2970 1587 2970 
+Q 1216 2970 678 2790 
+L 531 3219 
+Q 1158 3450 1696 3450 
+Q 2291 3450 2585 3158 
+Q 2880 2867 2880 2330 
+L 2880 787 
+z
+M 1498 365 
+Q 2003 365 2291 890 
+L 2291 1664 
+L 1850 1664 
+Q 915 1664 915 973 
+Q 915 672 1062 518 
+Q 1210 365 1498 365 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Regular-65" d="M 3155 1786 
+Q 3155 1638 3142 1485 
+L 992 1485 
+Q 1030 928 1273 665 
+Q 1517 403 1901 403 
+Q 2144 403 2349 473 
+Q 2554 544 2778 698 
+L 3034 346 
+Q 2496 -77 1856 -77 
+Q 1152 -77 758 384 
+Q 365 845 365 1651 
+Q 365 2176 534 2582 
+Q 704 2989 1021 3219 
+Q 1338 3450 1766 3450 
+Q 2438 3450 2796 3008 
+Q 3155 2566 3155 1786 
+z
+M 2573 1958 
+Q 2573 2458 2374 2720 
+Q 2176 2982 1779 2982 
+Q 1056 2982 992 1920 
+L 2573 1920 
+L 2573 1958 
+z
+" transform="scale(0.015625)"></path>
+       <path id="FiraSans-Regular-29" d="M 627 5408 
+Q 1050 4806 1277 4419 
+Q 1504 4032 1661 3491 
+Q 1818 2950 1818 2240 
+Q 1818 1530 1661 989 
+Q 1504 448 1277 61 
+Q 1050 -326 627 -928 
+L 256 -672 
+Q 589 -186 784 208 
+Q 979 602 1091 1094 
+Q 1203 1587 1203 2240 
+Q 1203 2899 1091 3392 
+Q 979 3885 784 4272 
+Q 589 4659 256 5152 
+L 627 5408 
+z
+" transform="scale(0.015625)"></path>
+      </defs>
+      <use href="#FiraSans-LightItalic-3c4" transform="translate(0 0.5)"></use>
+      <use href="#FiraSans-Regular-20" transform="translate(43.399994 0.5)"></use>
+      <use href="#FiraSans-Regular-20" transform="translate(69.899979 0.5)"></use>
+      <use href="#FiraSans-Regular-20" transform="translate(96.399963 0.5)"></use>
+      <use href="#FiraSans-Regular-28" transform="translate(122.899948 0.5)"></use>
+      <use href="#FiraSans-Regular-6c" transform="translate(155.299942 0.5)"></use>
+      <use href="#FiraSans-Regular-6f" transform="translate(184.59993 0.5)"></use>
+      <use href="#FiraSans-Regular-67" transform="translate(242.999924 0.5)"></use>
+      <use href="#FiraSans-Regular-20" transform="translate(294.999908 0.5)"></use>
+      <use href="#FiraSans-Regular-73" transform="translate(321.499893 0.5)"></use>
+      <use href="#FiraSans-Regular-63" transform="translate(368.19989 0.5)"></use>
+      <use href="#FiraSans-Regular-61" transform="translate(415.999878 0.5)"></use>
+      <use href="#FiraSans-Regular-6c" transform="translate(470.399872 0.5)"></use>
+      <use href="#FiraSans-Regular-65" transform="translate(499.69986 0.5)"></use>
+      <use href="#FiraSans-Regular-29" transform="translate(554.199844 0.5)"></use>
+     </g>
+    </g>
+   </g>
+   <g id="curve-std" class="fragment draw-line" data-fragment-index="0">
+    <path d="M 22.61 216.433581 
+L 26.143043 212.036995 
+L 30.382695 207.150084 
+L 34.622347 202.627766 
+L 38.861998 198.419396 
+L 43.808259 193.852461 
+L 48.754519 189.605483 
+L 53.70078 185.63655 
+L 59.353649 181.397526 
+L 65.006518 177.435541 
+L 71.365995 173.267359 
+L 77.725473 169.367323 
+L 84.791559 165.309198 
+L 91.857645 161.505674 
+L 99.63034 157.58013 
+L 107.403035 153.893306 
+L 115.882339 150.11153 
+L 125.068251 146.264376 
+L 134.960772 142.377239 
+L 144.853292 138.724313 
+L 155.452422 135.040205 
+L 166.75816 131.342521 
+L 178.770507 127.646081 
+L 191.489462 123.963216 
+L 204.915026 120.304074 
+L 219.047198 116.676904 
+L 234.592588 112.922627 
+L 250.844586 109.231367 
+L 267.803194 105.605102 
+L 286.175018 101.906876 
+L 304.546842 98.421266 
+L 304.546842 98.421266 
+" clip-path="url(#p6ea151d352)" style="fill: none; stroke: #3b7ea1; stroke-width: 2.2; stroke-linecap: round"></path>
+   </g>
+   <g id="curve-top" class="fragment draw-line" data-fragment-index="1">
+    <path d="M 22.61 216.433581 
+L 304.546842 34.494581 
+L 304.546842 34.494581 
+" clip-path="url(#p6ea151d352)" style="fill: none; stroke: #9c162a; stroke-width: 2.4; stroke-linecap: round"></path>
+   </g>
+   <g id="patch_3">
+    <path d="M 22.61 223.2 
+L 22.61 1.44 
+" style="fill: none; stroke: #33474b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="patch_4">
+    <path d="M 22.61 223.2 
+L 379.73 223.2 
+" style="fill: none; stroke: #33474b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="label-std" class="fragment" data-fragment-index="0">
+    <!-- $\tau \sim a^{-z}$ -->
+    <g style="fill: #3b7ea1" transform="translate(311.546842 102.918063) scale(0.13 -0.13)">
+     <defs>
+      <path id="Cmsy10-bb" d="M 447 850 
+Q 378 850 359 1013 
+L 359 1050 
+Q 359 1544 654 1947 
+Q 950 2350 1422 2350 
+Q 1716 2350 1955 2204 
+Q 2194 2059 2516 1768 
+Q 2838 1478 3055 1343 
+Q 3272 1209 3553 1209 
+Q 3806 1209 4006 1346 
+Q 4206 1484 4320 1712 
+Q 4434 1941 4434 2188 
+Q 4453 2350 4525 2350 
+Q 4597 2350 4616 2188 
+L 4616 2150 
+Q 4616 1841 4486 1537 
+Q 4356 1234 4115 1042 
+Q 3875 850 3553 850 
+Q 3259 850 3031 989 
+Q 2803 1128 2481 1417 
+Q 2159 1706 1931 1848 
+Q 1703 1991 1422 1991 
+Q 1172 1991 969 1853 
+Q 766 1716 652 1487 
+Q 538 1259 538 1013 
+Q 519 850 447 850 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-2212" d="M 442 1958 
+L 442 2285 
+L 2714 2285 
+L 2714 1958 
+L 442 1958 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-LightItalic-7a" d="M 2707 3347 
+L 2669 3059 
+L 448 320 
+L 2266 320 
+L 2182 0 
+L -64 0 
+L -19 288 
+L 2195 3021 
+L 518 3021 
+L 563 3347 
+L 2707 3347 
+z
+" transform="scale(0.015625)"></path>
+     </defs>
+     <use href="#FiraSans-LightItalic-3c4" transform="translate(0 0.784375)"></use>
+     <use href="#Cmsy10-bb" transform="translate(60.379993 0.784375)"></use>
+     <use href="#FiraSans-LightItalic-61" transform="translate(155.045538 0.784375)"></use>
+     <use href="#FiraSans-Light-2212" transform="translate(215.471747 37.392188) scale(0.7)"></use>
+     <use href="#FiraSans-LightItalic-7a" transform="translate(249.981738 37.392188) scale(0.7)"></use>
+    </g>
+   </g>
+   <g id="label-top" class="fragment" data-fragment-index="1">
+    <!-- $\tau_{\mathrm{top}} \sim e^{\,c/a}$ -->
+    <g style="fill: #9c162a" transform="translate(311.546842 38.524581) scale(0.13 -0.13)">
+     <defs>
+      <path id="FiraSans-Light-74" d="M 2202 141 
+Q 1882 -70 1498 -70 
+Q 1114 -70 896 157 
+Q 678 384 678 813 
+L 678 3046 
+L 115 3046 
+L 115 3347 
+L 678 3347 
+L 678 4147 
+L 1050 4192 
+L 1050 3347 
+L 1914 3347 
+L 1869 3046 
+L 1050 3046 
+L 1050 832 
+Q 1050 538 1171 394 
+Q 1293 250 1542 250 
+Q 1798 250 2054 397 
+L 2202 141 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-6f" d="M 1830 3418 
+Q 2496 3418 2870 2960 
+Q 3245 2502 3245 1683 
+Q 3245 870 2864 400 
+Q 2483 -70 1824 -70 
+Q 1158 -70 784 394 
+Q 410 858 410 1670 
+Q 410 2202 582 2598 
+Q 755 2995 1075 3206 
+Q 1395 3418 1830 3418 
+z
+M 1830 3104 
+Q 1344 3104 1075 2739 
+Q 806 2374 806 1670 
+Q 806 973 1072 608 
+Q 1338 243 1824 243 
+Q 2310 243 2582 608 
+Q 2854 973 2854 1683 
+Q 2854 2381 2588 2742 
+Q 2323 3104 1830 3104 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-70" d="M 2061 3418 
+Q 2669 3418 2973 2966 
+Q 3277 2515 3277 1690 
+Q 3277 883 2947 406 
+Q 2618 -70 2003 -70 
+Q 1702 -70 1459 54 
+Q 1216 179 1050 390 
+L 1050 -1261 
+L 678 -1312 
+L 678 3347 
+L 998 3347 
+L 1030 2861 
+Q 1216 3123 1481 3270 
+Q 1747 3418 2061 3418 
+z
+M 1933 243 
+Q 2394 243 2637 608 
+Q 2880 973 2880 1690 
+Q 2880 3110 1990 3110 
+Q 1690 3110 1469 2956 
+Q 1248 2803 1050 2534 
+L 1050 755 
+Q 1382 243 1933 243 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-LightItalic-65" d="M 3078 2611 
+Q 3078 1997 2476 1699 
+Q 1875 1402 768 1318 
+L 768 1280 
+Q 768 755 995 505 
+Q 1222 256 1619 256 
+Q 1882 256 2102 336 
+Q 2323 416 2566 589 
+L 2733 326 
+Q 2464 128 2185 29 
+Q 1907 -70 1594 -70 
+Q 1018 -70 698 282 
+Q 378 634 378 1274 
+Q 378 1779 560 2272 
+Q 742 2765 1129 3091 
+Q 1517 3418 2086 3418 
+Q 2554 3418 2816 3190 
+Q 3078 2963 3078 2611 
+z
+M 2086 3110 
+Q 1510 3110 1187 2668 
+Q 864 2227 787 1613 
+Q 1747 1690 2220 1920 
+Q 2694 2150 2694 2598 
+Q 2694 2816 2540 2963 
+Q 2387 3110 2086 3110 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-LightItalic-63" d="M 2048 3418 
+Q 2605 3418 2950 3072 
+L 2739 2835 
+Q 2592 2970 2425 3037 
+Q 2259 3104 2042 3104 
+Q 1594 3104 1309 2816 
+Q 1024 2528 896 2102 
+Q 768 1677 768 1261 
+Q 768 755 989 505 
+Q 1210 256 1606 256 
+Q 1837 256 2032 326 
+Q 2227 397 2432 538 
+L 2592 275 
+Q 2138 -70 1587 -70 
+Q 1024 -70 704 285 
+Q 384 640 384 1280 
+Q 384 1766 557 2259 
+Q 730 2752 1104 3085 
+Q 1478 3418 2048 3418 
+z
+" transform="scale(0.015625)"></path>
+     </defs>
+     <use href="#FiraSans-LightItalic-3c4" transform="translate(0 0.184375)"></use>
+     <use href="#FiraSans-Light-74" transform="translate(43.399994 -15.504687) scale(0.7)"></use>
+     <use href="#FiraSans-Light-6f" transform="translate(67.269987 -15.504687) scale(0.7)"></use>
+     <use href="#FiraSans-Light-70" transform="translate(107.239981 -15.504687) scale(0.7)"></use>
+     <use href="#Cmsy10-bb" transform="translate(167.504817 0.184375)"></use>
+     <use href="#FiraSans-LightItalic-65" transform="translate(262.170363 0.184375)"></use>
+     <use href="#FiraSans-LightItalic-63" transform="translate(327.801772 36.792188) scale(0.7)"></use>
+     <use href="#FiraSans-Light-2f" transform="translate(360.49177 36.792188) scale(0.7)"></use>
+     <use href="#FiraSans-LightItalic-61" transform="translate(396.891759 36.792188) scale(0.7)"></use>
+    </g>
+   </g>
+   <g id="patch_5">
+    <path d="M 79.7492 257.5728 
+Q 161.8868 257.5728 242.906366 257.5728 
+" style="fill: none; stroke: #8a9aa0; stroke-linecap: round"></path>
+    <path d="M 238.506366 255.3728 
+L 242.906366 257.5728 
+L 238.506366 259.7728 
+z
+" style="fill: #8a9aa0; stroke: #8a9aa0; stroke-linecap: round"></path>
+   </g>
+   <g id="text_3">
+    <!-- continuum limit   $a \to 0$ -->
+    <g style="fill: #8a9aa0" transform="translate(251.1668 260.262644) scale(0.1 -0.1)">
+     <defs>
+      <path id="FiraSans-Light-63" d="M 1824 3418 
+Q 2112 3418 2336 3338 
+Q 2560 3258 2771 3078 
+L 2586 2835 
+Q 2419 2970 2243 3034 
+Q 2067 3098 1843 3098 
+Q 1370 3098 1088 2730 
+Q 806 2362 806 1658 
+Q 806 960 1084 608 
+Q 1363 256 1837 256 
+Q 2061 256 2243 326 
+Q 2426 397 2611 538 
+L 2790 288 
+Q 2368 -70 1830 -70 
+Q 1402 -70 1082 134 
+Q 762 339 586 726 
+Q 410 1114 410 1651 
+Q 410 2182 586 2582 
+Q 762 2982 1082 3200 
+Q 1402 3418 1824 3418 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-6e" d="M 2157 3418 
+Q 2611 3418 2851 3149 
+Q 3091 2880 3091 2394 
+L 3091 0 
+L 2720 0 
+L 2720 2342 
+Q 2720 2746 2560 2931 
+Q 2400 3117 2086 3117 
+Q 1766 3117 1520 2941 
+Q 1274 2765 1050 2426 
+L 1050 0 
+L 678 0 
+L 678 3347 
+L 998 3347 
+L 1037 2778 
+Q 1242 3078 1523 3248 
+Q 1805 3418 2157 3418 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-69" d="M 1050 3347 
+L 1050 0 
+L 678 0 
+L 678 3347 
+L 1050 3347 
+z
+M 858 4819 
+Q 986 4819 1062 4742 
+Q 1139 4666 1139 4550 
+Q 1139 4435 1062 4358 
+Q 986 4282 858 4282 
+Q 736 4282 659 4358 
+Q 583 4435 583 4550 
+Q 583 4666 659 4742 
+Q 736 4819 858 4819 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-75" d="M 3027 0 
+L 2707 0 
+L 2688 595 
+Q 2291 -70 1594 -70 
+Q 1139 -70 892 195 
+Q 646 461 646 954 
+L 646 3347 
+L 1018 3347 
+L 1018 992 
+Q 1018 602 1181 419 
+Q 1344 237 1677 237 
+Q 2259 237 2656 922 
+L 2656 3347 
+L 3027 3347 
+L 3027 0 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-6d" d="M 3942 3418 
+Q 4346 3418 4579 3142 
+Q 4813 2867 4813 2394 
+L 4813 0 
+L 4442 0 
+L 4442 2342 
+Q 4442 2739 4291 2928 
+Q 4141 3117 3872 3117 
+Q 3590 3117 3366 2937 
+Q 3142 2758 2931 2426 
+L 2931 0 
+L 2560 0 
+L 2560 2342 
+Q 2560 2739 2409 2928 
+Q 2259 3117 1990 3117 
+Q 1702 3117 1478 2937 
+Q 1254 2758 1050 2426 
+L 1050 0 
+L 678 0 
+L 678 3347 
+L 998 3347 
+L 1030 2778 
+Q 1222 3078 1484 3248 
+Q 1747 3418 2061 3418 
+Q 2381 3418 2598 3242 
+Q 2816 3066 2893 2752 
+Q 3091 3066 3356 3242 
+Q 3622 3418 3942 3418 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-20" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-6c" d="M 1235 -70 
+Q 960 -70 803 90 
+Q 646 250 646 563 
+L 646 4710 
+L 1018 4755 
+L 1018 576 
+Q 1018 250 1286 250 
+Q 1421 250 1517 294 
+L 1619 19 
+Q 1440 -70 1235 -70 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-2192" d="M 4883 2106 
+L 3238 269 
+L 2970 506 
+L 3859 1498 
+Q 4102 1779 4333 1939 
+L 909 1939 
+L 909 2272 
+L 4333 2272 
+Q 4115 2419 3859 2714 
+L 2970 3706 
+L 3238 3942 
+L 4883 2106 
+z
+" transform="scale(0.015625)"></path>
+      <path id="FiraSans-Light-30" d="M 1760 4326 
+Q 2419 4326 2758 3766 
+Q 3098 3206 3098 2125 
+Q 3098 1050 2755 490 
+Q 2413 -70 1760 -70 
+Q 1101 -70 761 490 
+Q 422 1050 422 2131 
+Q 422 3213 761 3769 
+Q 1101 4326 1760 4326 
+z
+M 1760 4019 
+Q 806 4019 806 2131 
+Q 806 237 1760 237 
+Q 2227 237 2467 697 
+Q 2707 1158 2707 2125 
+Q 2707 3091 2467 3555 
+Q 2227 4019 1760 4019 
+z
+" transform="scale(0.015625)"></path>
+     </defs>
+     <use href="#FiraSans-Light-63" transform="translate(0 0.703125)"></use>
+     <use href="#FiraSans-Light-6f" transform="translate(46.899994 0.703125)"></use>
+     <use href="#FiraSans-Light-6e" transform="translate(103.999985 0.703125)"></use>
+     <use href="#FiraSans-Light-74" transform="translate(162.399979 0.703125)"></use>
+     <use href="#FiraSans-Light-69" transform="translate(196.499969 0.703125)"></use>
+     <use href="#FiraSans-Light-6e" transform="translate(223.499954 0.703125)"></use>
+     <use href="#FiraSans-Light-75" transform="translate(281.899948 0.703125)"></use>
+     <use href="#FiraSans-Light-75" transform="translate(339.799942 0.703125)"></use>
+     <use href="#FiraSans-Light-6d" transform="translate(397.699936 0.703125)"></use>
+     <use href="#FiraSans-Light-20" transform="translate(482.999924 0.703125)"></use>
+     <use href="#FiraSans-Light-6c" transform="translate(510.899918 0.703125)"></use>
+     <use href="#FiraSans-Light-69" transform="translate(539.299911 0.703125)"></use>
+     <use href="#FiraSans-Light-6d" transform="translate(566.299896 0.703125)"></use>
+     <use href="#FiraSans-Light-69" transform="translate(651.599884 0.703125)"></use>
+     <use href="#FiraSans-Light-74" transform="translate(678.599869 0.703125)"></use>
+     <use href="#FiraSans-Light-20" transform="translate(712.69986 0.703125)"></use>
+     <use href="#FiraSans-Light-20" transform="translate(740.599854 0.703125)"></use>
+     <use href="#FiraSans-Light-20" transform="translate(768.499847 0.703125)"></use>
+     <use href="#FiraSans-LightItalic-61" transform="translate(796.399841 0.703125)"></use>
+     <use href="#FiraSans-Light-2192" transform="translate(869.379825 0.703125)"></use>
+     <use href="#FiraSans-Light-30" transform="translate(976.359808 0.703125)"></use>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clippath id="p6ea151d352">
+   <rect x="22.61" y="1.44" width="357.12" height="221.76"></rect>
+  </clippath>
+ </defs>
+</svg>
+</div></div>
+<div class="fragment lead" data-fragment-index="2" style="margin-top:0.4em; text-align:center; font-size:0.91em">
+<p>On top of that a <strong>physical</strong> suppression: <span class="math inline">\(\chi(T)\)</span> falls steeply, the chain sits at <span class="math inline">\(Q=0\)</span>, and the rare configurations that carry the signal are never sampled.</p>
+</div>
+<div class="fragment takeaway" data-fragment-index="3">
+<p>Two fronts: <span class="p1c" style=""><strong>what we can measure</strong></span> and <span class="p2c" style=""><strong>how we can sample it</strong></span></p>
+</div>
+</section>
+<section id="projects-carried-in-the-first-two-years" class="slide level2">
+<h2>Projects carried in the first two years</h2>
+<svg class="roadmap-fig" viewbox="0 0 1150 470" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="575.0" cy="262.0" r="128.0" fill="none" stroke="#e3e6e6" stroke-width="50.0"></circle>
+  <g class="fragment fade-out" data-fragment-index="2">
+    <g class="fragment draw-line" data-fragment-index="0" style="--len:394.97">
+      <path d="M 571.43 134.05 A 128.00 128.00 0 0 0 571.43 389.95" fill="none" stroke="#3B7EA1" stroke-width="50.0" stroke-linecap="butt"></path>
+    </g>
+  </g>
+  <g class="fragment" data-fragment-index="0"><text x="547.0" y="46" text-anchor="end" font-size="33" font-weight="400" fill="#2C6A8C">Topological observables</text><text x="547.0" y="74" text-anchor="end" font-size="19" fill="#55696F">what QCD topology tells us</text></g>
+  <g class="fragment fade-out" data-fragment-index="3">
+    <g class="fragment draw-line" data-fragment-index="1" style="--len:394.97">
+      <path d="M 578.57 134.05 A 128.00 128.00 0 0 1 578.57 389.95" fill="none" stroke="#EB811B" stroke-width="50.0" stroke-linecap="butt"></path>
+    </g>
+  </g>
+  <g class="fragment" data-fragment-index="1"><text x="603.0" y="46" text-anchor="start" font-size="33" font-weight="400" fill="#D4700F">Algorithmic challenges</text><text x="603.0" y="74" text-anchor="start" font-size="19" fill="#55696F">how to sample it at all</text></g>
+  <line x1="575.0" y1="18" x2="575.0" y2="82" stroke="#C9D2D5" stroke-width="1.5"></line>
+  <g class="fragment draw-line seq" data-fragment-index="2" style="--len:126.89; --d:0.30s">
+    <path d="M 571.43 134.05 A 128.00 128.00 0 0 0 465.98 194.93" fill="none" stroke="#1E5373" stroke-width="50.0" stroke-linecap="butt"></path>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="2" style="--d:0.55s">
+    <polyline points="495.5,124.3 487.5,110.4 381.0,110.4" fill="none" stroke="#1E5373" stroke-width="2"></polyline>
+    <circle cx="381.0" cy="110.4" r="5" fill="#1E5373"></circle>
+    <text x="365.0" y="108.4" text-anchor="end" font-size="25" fill="#33474B">Topological rate at finite <tspan font-style="italic">p</tspan></text>
+    <text x="365.0" y="134.4" text-anchor="end" font-size="18" fill="#55696F">real-time transitions · quenched QCD</text>
+  </g>
+  <g class="fragment draw-line seq" data-fragment-index="2" style="--len:126.89; --d:0.68s">
+    <path d="M 462.40 201.12 A 128.00 128.00 0 0 0 462.40 322.88" fill="none" stroke="#3B7EA1" stroke-width="50.0" stroke-linecap="butt"></path>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="2" style="--d:0.93s">
+    <polyline points="416.0,262.0 400.0,262.0 381.0,262.0" fill="none" stroke="#3B7EA1" stroke-width="2"></polyline>
+    <circle cx="381.0" cy="262.0" r="5" fill="#3B7EA1"></circle>
+    <text x="365.0" y="260.0" text-anchor="end" font-size="25" fill="#33474B"><tspan font-style="italic">b</tspan><tspan baseline-shift="sub" font-size="70%">2</tspan> across the crossover</text>
+    <text x="365.0" y="286.0" text-anchor="end" font-size="18" fill="#55696F">θ-dependence · N<tspan baseline-shift="sub" font-size="70%">f</tspan> = 2+1 QCD</text>
+  </g>
+  <g class="fragment draw-line seq" data-fragment-index="2" style="--len:126.89; --d:1.06s">
+    <path d="M 465.98 329.07 A 128.00 128.00 0 0 0 571.43 389.95" fill="none" stroke="#86B6CF" stroke-width="50.0" stroke-linecap="butt"></path>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="2" style="--d:1.31s">
+    <polyline points="495.5,399.7 487.5,413.6 381.0,413.6" fill="none" stroke="#86B6CF" stroke-width="2"></polyline>
+    <circle cx="381.0" cy="413.6" r="5" fill="#86B6CF"></circle>
+    <text x="365.0" y="411.6" text-anchor="end" font-size="25" fill="#33474B">Lines of constant physics</text>
+    <text x="365.0" y="437.6" text-anchor="end" font-size="18" fill="#55696F">step scaling + fermion flow</text>
+  </g>
+  <g class="fragment draw-line seq" data-fragment-index="3" style="--len:126.89; --d:0.30s">
+    <path d="M 578.57 134.05 A 128.00 128.00 0 0 1 684.02 194.93" fill="none" stroke="#B5600E" stroke-width="50.0" stroke-linecap="butt"></path>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="3" style="--d:0.55s">
+    <polyline points="654.5,124.3 662.5,110.4 769.0,110.4" fill="none" stroke="#B5600E" stroke-width="2"></polyline>
+    <circle cx="769.0" cy="110.4" r="5" fill="#B5600E"></circle>
+    <text x="785.0" y="108.4" text-anchor="start" font-size="25" fill="#33474B">Normalizing flows</text>
+    <text x="785.0" y="134.4" text-anchor="start" font-size="18" fill="#55696F">learned change of variables · 2D U(1)</text>
+  </g>
+  <g class="fragment draw-line seq" data-fragment-index="3" style="--len:126.89; --d:0.68s">
+    <path d="M 687.60 201.12 A 128.00 128.00 0 0 1 687.60 322.88" fill="none" stroke="#EB811B" stroke-width="50.0" stroke-linecap="butt"></path>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="3" style="--d:0.93s">
+    <polyline points="734.0,262.0 750.0,262.0 769.0,262.0" fill="none" stroke="#EB811B" stroke-width="2"></polyline>
+    <circle cx="769.0" cy="262.0" r="5" fill="#EB811B"></circle>
+    <text x="785.0" y="260.0" text-anchor="start" font-size="25" fill="#33474B">Optimal annealing paths</text>
+    <text x="785.0" y="286.0" text-anchor="start" font-size="18" fill="#55696F">Fisher geometry · CP<tspan baseline-shift="super" font-size="70%">N−1</tspan></text>
+  </g>
+  <g class="fragment draw-line seq" data-fragment-index="3" style="--len:126.89; --d:1.06s">
+    <path d="M 684.02 329.07 A 128.00 128.00 0 0 1 578.57 389.95" fill="none" stroke="#F3B26B" stroke-width="50.0" stroke-linecap="butt"></path>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="3" style="--d:1.31s">
+    <polyline points="654.5,399.7 662.5,413.6 769.0,413.6" fill="none" stroke="#F3B26B" stroke-width="2"></polyline>
+    <circle cx="769.0" cy="413.6" r="5" fill="#F3B26B"></circle>
+    <text x="785.0" y="411.6" text-anchor="start" font-size="25" fill="#33474B">Out-of-equilibrium exchange</text>
+    <text x="785.0" y="437.6" text-anchor="start" font-size="18" fill="#55696F">O-REX · CP<tspan baseline-shift="super" font-size="70%">20</tspan></text>
+  </g>
+  <g class="fragment fade-out" data-fragment-index="3">
+    <text x="575.0" y="272.0" text-anchor="middle" font-size="68" fill="#23373B">2</text>
+    <text x="575.0" y="304.0" text-anchor="middle" font-size="22" fill="#55696F">years</text>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="3" style="--d:1.3s">
+    <text x="575.0" y="272.0" text-anchor="middle" font-size="68" fill="#23373B">6</text>
+    <text x="575.0" y="304.0" text-anchor="middle" font-size="22" fill="#55696F">projects</text>
+  </g>
+</svg>
+<div class="fragment takeaway" data-fragment-index="4" style="margin-top:0.2em; font-size:0.86em">
+<p>So <span class="p2c" style=""><strong>Part II</strong></span> builds the samplers (hopefully) that <span class="p1c" style=""><strong>Part I</strong></span> needs at high <span class="math inline">\(T\)</span></p>
+</div>
+</section>
+<section id="section" class="slide level2 divider d1">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<svg class="sec-donut" viewbox="-20 -20 400 400" xmlns="http://www.w3.org/2000/svg">
+  <path class="wedge-on" style="--dx:-8.0px; --dy:-13.9px" d="M 176.76 64.05 A 116.00 116.00 0 0 0 81.20 119.22" fill="none" stroke="#1E5373" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:-16.0px; --dy:0.0px" d="M 77.96 124.83 A 116.00 116.00 0 0 0 77.96 235.17" fill="none" stroke="#3B7EA1" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:-8.0px; --dy:13.9px" d="M 81.20 240.78 A 116.00 116.00 0 0 0 176.76 295.95" fill="none" stroke="#86B6CF" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:8.0px; --dy:-13.9px" d="M 183.24 64.05 A 116.00 116.00 0 0 1 278.80 119.22" fill="none" stroke="#B5600E" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:16.0px; --dy:0.0px" d="M 282.04 124.83 A 116.00 116.00 0 0 1 282.04 235.17" fill="none" stroke="#EB811B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:8.0px; --dy:13.9px" d="M 278.80 240.78 A 116.00 116.00 0 0 1 183.24 295.95" fill="none" stroke="#F3B26B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <text x="180.0" y="194.0" text-anchor="middle" font-size="76" fill="#23373B">1</text>
+  <text x="180.0" y="226.0" text-anchor="middle" font-size="20" fill="#55696F">of 6</text>
+</svg>
+</div><div class="column" style="width:60%;">
+<div class="kicker p1">
+<p>Part I · Topological observables</p>
+</div>
+<div class="ptitle">
+<p>Real-time topological rate at finite momentum</p>
+</div>
+<div class="question">
+<p>How fast does the hot plasma turn topology into axions of momentum <span class="math inline">\(p\)</span>?</p>
+</div>
+<div class="chips">
+<p><span class="chip" style="">arXiv:2608.12066</span> <span class="chip" style="">quenched SU(3), <span class="math inline">\(T\simeq1.24\,T_c\)</span></span> <span class="chip" style="">Lattice 2026</span></p>
+</div>
+<div class="with">
+<p>with C. Bonanno, M. D’Elia, G. Gagliardi, A. Giorgieri, F. Sanfilippo, A. Valentino, G. Villadoro</p>
+</div>
+</div></div>
+</section>
+<section id="axion-production-needs-the-rate-at-finite-p" class="slide level2 p1">
+<h2>Axion production needs the rate at finite p</h2>
+<div style="font-size:0.9em">
+<p>Thermal axions obey a <strong>momentum-dependent</strong> Boltzmann equation <span style=";color: gray;">[3]</span></p>
+<p><span class="math display">\[\frac{df_{\vec p}}{dt}=(1+f_{\vec p})\,\Gamma_a^{(+)}(p)-f_{\vec p}\,\Gamma_a^{(-)}(p),
+\qquad \Gamma_a^{(-)}(p)=\frac{\Gamma_{\rm top}(\omega=E_p,\,p)}{2E_p f_a^2}\]</span></p>
+</div>
+<div class="fragment lead" style="margin-top:0.2em; text-align:center; font-size:0.9em">
+<p>Higher momenta decouple <strong>later</strong>: <br> modes may equilibrate at different times <span class="math inline">\(\Rightarrow\)</span> the integrated (sphaleron) rate <span class="math inline">\(\Gamma_{\rm top}(0,0)\)</span> <span style=";color: gray;">[4]</span> is not enough.</p>
+</div>
+<div class="fragment" style="margin-top:0.9em">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="card">
+<p><span class="hd" style="">What the lattice measures</span> <span class="math display">\[G_E(\tau,p)=\int\! d^3x\,e^{i\vec p\cdot\vec x}\langle q(\vec x,\tau)\,q(\vec 0,0)\rangle\]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="card accent">
+<p><span class="hd" style="">What we need</span> <span class="math display">\[\Gamma_{\rm top}(\omega,p)=\frac{2}{1-e^{-\omega/T}}\,\rho(\omega,p)\]</span></p>
+</div>
+</div></div>
+</div>
+<div class="fragment takeaway">
+<p><span class="math inline">\(\displaystyle G_E(\tau,p)=-\int_0^\infty\!\frac{d\omega}{\pi}\,\rho(\omega,p)\,
+\frac{\cosh\!\big[\omega(\tfrac{1}{2T}-\tau)\big]}{\sinh\!\big(\tfrac{\omega}{2T}\big)}\)</span> <span class="math inline">\(\quad\Longrightarrow\quad\)</span> an <strong>inverse problem</strong></p>
+</div>
+</section>
+<section id="hlt-algorithm" class="slide level2 p1">
+<h2>HLT algorithm</h2>
+<div style="font-size:0.86em; text-align:center">
+<p><strong>HLT</strong> <span style=";color: gray;">[5]</span>: never reconstruct <span class="math inline">\(\rho\)</span> pointwise, target a <strong>smeared</strong> density</p>
+</div>
+<div style="font-size:0.84em">
+<p><span class="math display">\[\frac{\bar\rho(\omega^*\!,p)}{\omega^*}=-\pi\sum_\tau g_\tau(\omega^*)\,G_E(\tau,p)=\int\! d\omega\,\Delta_\sigma(\omega,\omega^*)\,\frac{\rho(\omega,p)}{\omega}\]</span></p>
+</div>
+<div class="columns">
+<div class="column" style="width:52%;">
+<div style="font-size:0.82em">
+<p><span class="math inline">\(g_\tau\)</span> minimise</p>
+<p><span class="math display">\[F_\lambda[g]=(1-\lambda)\,\underbrace{A[g]}_{\text{kernel bias}}+\lambda\,\underbrace{B[g]}_{\text{stat. variance}}\]</span></p>
+</div>
+<div class="note">
+<p>Scan <span class="math inline">\(\lambda\)</span> for the stability plateau; <span class="math inline">\(\sigma/T\in[1.25,2.5]\)</span>, quoted at 1.75.</p>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="fragment" style="font-size:0.82em">
+<p><strong>Three limits</strong>, in order</p>
+<ol type="1">
+<li>continuum <span class="math inline">\(a\to0\)</span> at fixed <span class="math inline">\(R_s\)</span></li>
+<li>smoothing radius <span class="math inline">\(R_s\to0\)</span> (cooling)</li>
+<li>smearing width <span class="math inline">\(\sigma\to0\)</span></li>
+</ol>
+</div>
+<div class="fragment note">
+<p><span class="math inline">\(N_\tau=12,14,16\)</span> at <span class="math inline">\(LT=4\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(p/T\)</span> up to <span class="math inline">\(3\pi\)</span></p>
+</div>
+</div></div>
+<div class="fragment" style="margin-top:0.5em">
+<div style="text-align:center; font-size:0.74em; font-weight:500; color:#9c162a">
+<p>Method 1 · extrapolate, then invert</p>
+</div>
+<div class="flow">
+<p><span class="box" style=""><span class="math inline">\(G_E(\tau,p;a,R_s)\)</span></span> <span class="arrow" style="">→</span> <span class="box" style=""><span class="math inline">\(a\to0\)</span>, then <span class="math inline">\(R_s\to0\)</span></span> <span class="arrow" style="">→</span> <span class="box net" style="">HLT</span> <span class="arrow" style="">→</span> <span class="box" style=""><span class="math inline">\(\Gamma_{\rm top}(\omega,p)\)</span></span></p>
+</div>
+<div style="text-align:center; font-size:0.74em; font-weight:500; color:#3b7ea1; margin-top:0.3em">
+<p>Method 2 · invert, then extrapolate the rate</p>
+</div>
+<div class="flow">
+<p><span class="box" style=""><span class="math inline">\(G_E(\tau,p;a,R_s)\)</span></span> <span class="arrow" style="">→</span> <span class="box net" style="">HLT</span> <span class="arrow" style="">→</span> <span class="box" style=""><span class="math inline">\(a\to0\)</span>, then <span class="math inline">\(R_s\to0\)</span></span> <span class="arrow" style="">→</span> <span class="box" style=""><span class="math inline">\(\Gamma_{\rm top}(\omega,p)\)</span></span></p>
+</div>
+</div>
+</section>
+<section id="the-on-shell-rate-grows-linearly-with-p" class="slide level2 money p1">
+<h2>The on-shell rate grows linearly with p</h2>
+<p><img data-src="figures/fig_rate.svg" class="tall"></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment lead" style="text-align:center; font-size:0.72em">
+<p><strong>Linear growth</strong> for <span class="math inline">\(p/T\geq2\)</span>, as semiclassics predicts <span style=";color: gray;">[6]</span> <br> <span class="math inline">\(\Gamma_{\rm top}\propto p\,(\alpha_sT)^3\big[A\log\frac{pT}{m_D^2}+B\big]\)</span>, already at <span class="math inline">\(1.24\,T_c\)</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment lead" style="text-align:center; font-size:0.72em">
+<p>The two orderings of the limits <strong>agree</strong> at every momentum. <br> <span class="math inline">\(G_E\)</span> is <em>suppressed</em> with <span class="math inline">\(p\)</span>, but on shell the growth with <span class="math inline">\(\omega\)</span> wins.</p>
+</div>
+</div></div>
+</section>
+<section id="section-1" class="slide level2 divider d1">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<svg class="sec-donut" viewbox="-20 -20 400 400" xmlns="http://www.w3.org/2000/svg">
+  <path class="wedge-off" style="--dx:-8.0px; --dy:-13.9px" d="M 176.76 64.05 A 116.00 116.00 0 0 0 81.20 119.22" fill="none" stroke="#1E5373" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-on" style="--dx:-16.0px; --dy:0.0px" d="M 77.96 124.83 A 116.00 116.00 0 0 0 77.96 235.17" fill="none" stroke="#3B7EA1" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:-8.0px; --dy:13.9px" d="M 81.20 240.78 A 116.00 116.00 0 0 0 176.76 295.95" fill="none" stroke="#86B6CF" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:8.0px; --dy:-13.9px" d="M 183.24 64.05 A 116.00 116.00 0 0 1 278.80 119.22" fill="none" stroke="#B5600E" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:16.0px; --dy:0.0px" d="M 282.04 124.83 A 116.00 116.00 0 0 1 282.04 235.17" fill="none" stroke="#EB811B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:8.0px; --dy:13.9px" d="M 278.80 240.78 A 116.00 116.00 0 0 1 183.24 295.95" fill="none" stroke="#F3B26B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <text x="180.0" y="194.0" text-anchor="middle" font-size="76" fill="#23373B">2</text>
+  <text x="180.0" y="226.0" text-anchor="middle" font-size="20" fill="#55696F">of 6</text>
+</svg>
+</div><div class="column" style="width:60%;">
+<div class="kicker p1">
+<p>Part I · Topological observables</p>
+</div>
+<div class="ptitle">
+<p><span class="math inline">\(b_2\)</span> across the chiral crossover</p>
+</div>
+<div class="question">
+<p>Where does QCD start behaving like a dilute gas of instantons?</p>
+</div>
+<div class="chips">
+<p><span class="chip" style=""><span class="math inline">\(N_f=2+1\)</span> QCD</span> <span class="chip" style=""><span class="math inline">\(T=130\)</span>–<span class="math inline">\(200\)</span> MeV</span> <span class="chip" style="">Nicolò Francesconi’s MSc thesis</span></p>
+</div>
+</div></div>
+</section>
+<section id="beyond-χ-b₂-shapes-the-axion-potential" class="slide level2 p1">
+<h2>Beyond χ: b₂ shapes the axion potential</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><img data-src="figures/fig_b2_potential.svg" class="tall"></p>
+</div><div class="column" style="width:48%;">
+<div style="font-size:0.8em; margin-top:0.3em">
+<p>The axion potential <strong>is</strong> the QCD free energy:</p>
+<p><span class="math display">\[V(a)=\tfrac12\,m_a^2\,a^2\Big[1+b_2\,\frac{a^2}{f_a^2}+\dots\Big],\qquad m_a^2f_a^2=\chi\]</span></p>
+</div>
+<div class="fragment card" style="font-size:0.72em">
+<p><span class="hd" style=""><span class="math inline">\(b_2\)</span> is the axion self-coupling</span> <span class="math inline">\(\lambda_a=12\,b_2\,m_a^2/f_a^2\)</span>: at <span class="math inline">\(T=0\)</span>, <span class="math inline">\(b_2=-0.029\)</span> gives <span class="math inline">\(\lambda_a\simeq-0.35\,m_a^2/f_a^2\)</span>, an <strong>attractive</strong> self-interaction <span style=";color: gray;">[1]</span>.</p>
+</div>
+<div class="fragment card accent" style="font-size:0.72em">
+<p><span class="hd" style="">Misalignment does not start at small angles</span> Post-inflation, <span class="math inline">\(\theta_0^{\rm rms}=\pi/\sqrt3\)</span>; pre-inflation, the smallest <span class="math inline">\(f_a\)</span> needs <span class="math inline">\(\theta_0\to\pi\)</span>. There the harmonic approximation fails, and the anharmonic terms are set by <span class="math inline">\(b_2(T)\)</span> around <span class="math inline">\(T_{\rm osc}\)</span>.</p>
+</div>
+</div></div>
+<div class="fragment takeaway" style="font-size:0.84em">
+<p><span class="math inline">\(\chi(T)\)</span> fixes the <strong>curvature</strong> of the potential; <span class="math inline">\(b_2(T)\)</span> fixes its <strong>shape</strong></p>
+</div>
+</section>
+<section id="from-chiral-perturbation-theory-to-diga" class="slide level2 p1">
+<h2>From chiral perturbation theory to DIGA</h2>
+<div class="columns" style="margin-top:0.8em">
+<div class="column" style="width:50%;">
+<div class="card" style="font-size:0.84em">
+<p><span class="hd" style="">Low temperatures · chiral perturbation theory</span> <span class="math display">\[b_2(0)\simeq-0.029\]</span> Predicted by the light-quark mass ratios.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="card alert" style="font-size:0.84em">
+<p><span class="hd" style="">High temperatures · dilute instanton gas approximation</span> <span class="math display">\[b_2^{\mathrm{DIGA}}=-\frac{1}{12},\qquad b_4^{\mathrm{DIGA}}=\frac{1}{360}\]</span> Characteristic values of the DIGA regime.</p>
+</div>
+</div></div>
+<div class="fragment card accent" data-fragment-index="0" style="font-size:0.84em; margin-top:0.6em">
+<p><span class="hd" style="">Pure Yang–Mills vs.&nbsp;QCD</span></p>
+<ul style="margin:0.2em 0 0 1.1em">
+  <li>Pure SU(3) Yang–Mills: first-order deconfinement transition <span style="color:gray">[20]</span>.</li>
+  <li class="fragment" data-fragment-index="1">Physical QCD: crossover; the approach to the DIGA regime is not fixed by the transition temperature.</li>
+</ul>
+</div>
+<div class="fragment takeaway" data-fragment-index="2" style="font-size:0.84em; margin-top:0.8em">
+<p>The temperature dependence of <span class="math inline">\(b_2\)</span> provides a <strong>diagnostic of the approach to the DIGA regime</strong>. Establishing the onset of DIGA is important for assessing the reliability of high-temperature extrapolations of <span class="math inline">\(\chi(T)\)</span>, a key input for QCD axion cosmology.</p>
+</div>
+</section>
+<section id="b₂-across-the-crossover-in-nf-21-qcd" class="slide level2 p1">
+<h2>b₂ across the crossover in Nf = 2+1 QCD</h2>
+<div class="censored-fig">
+  <img class="layer" src="figures/fig_b2_cens_base.svg" alt="b2 frame">
+  <img class="layer fragment" data-fragment-index="0" src="figures/fig_b2_cens_first.svg" alt="first point">
+  <img class="layer fragment" data-fragment-index="1" src="figures/fig_b2_cens_last.svg" alt="last point">
+  <div class="embargo fragment stamp" data-fragment-index="2" style="left:32.94%; top:11.00%; width:43.19%; height:72.00%">
+    <svg class="lock" viewbox="0 0 40 48" aria-hidden="true">
+      <path d="M11 21 V14 a9 9 0 0 1 18 0 V21" fill="none" stroke="currentColor" stroke-width="4"></path>
+      <rect x="5" y="21" width="30" height="23" rx="4" fill="currentColor"></rect>
+      <circle cx="20" cy="31" r="3.2" fill="#f1f1f1"></circle>
+      <rect x="18.6" y="31" width="2.8" height="7" fill="#f1f1f1"></rect>
+    </svg>
+    <div class="em-k">the full transition</div>
+    <div class="em-name">Nicolò Francesconi</div>
+    <div class="em-sub">MSc thesis defence · next week</div>
+    <div class="em-stamp">embargoed</div>
+  </div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment lead" data-fragment-index="0" style="text-align:center; font-size:0.74em">
+<p><span class="math inline">\(T=130\)</span> MeV: <span class="easy" style=""><span class="math inline">\(-0.031(12)\)</span></span>, on the <strong>ChPT</strong> value</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment lead" data-fragment-index="1" style="text-align:center; font-size:0.74em">
+<p><span class="math inline">\(T=200\)</span> MeV: <span class="target" style=""><span class="math inline">\(-0.079(4)\)</span></span>, on the <strong>DIGA</strong> value</p>
+</div>
+</div></div>
+<div class="fragment takeaway" data-fragment-index="2" style="font-size:0.84em">
+<p>The whole ChPT → DIGA transition, resolved for the first time in <span class="math inline">\(N_f=2+1\)</span> QCD. <br> How QCD gets from one end to the other: <strong>Nicolò’s MSc defence, next week</strong>.</p>
+</div>
+</section>
+<section id="section-2" class="slide level2 divider d1">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<svg class="sec-donut" viewbox="-20 -20 400 400" xmlns="http://www.w3.org/2000/svg">
+  <path class="wedge-off" style="--dx:-8.0px; --dy:-13.9px" d="M 176.76 64.05 A 116.00 116.00 0 0 0 81.20 119.22" fill="none" stroke="#1E5373" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:-16.0px; --dy:0.0px" d="M 77.96 124.83 A 116.00 116.00 0 0 0 77.96 235.17" fill="none" stroke="#3B7EA1" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-on" style="--dx:-8.0px; --dy:13.9px" d="M 81.20 240.78 A 116.00 116.00 0 0 0 176.76 295.95" fill="none" stroke="#86B6CF" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:8.0px; --dy:-13.9px" d="M 183.24 64.05 A 116.00 116.00 0 0 1 278.80 119.22" fill="none" stroke="#B5600E" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:16.0px; --dy:0.0px" d="M 282.04 124.83 A 116.00 116.00 0 0 1 282.04 235.17" fill="none" stroke="#EB811B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:8.0px; --dy:13.9px" d="M 278.80 240.78 A 116.00 116.00 0 0 1 183.24 295.95" fill="none" stroke="#F3B26B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <text x="180.0" y="194.0" text-anchor="middle" font-size="76" fill="#23373B">3</text>
+  <text x="180.0" y="226.0" text-anchor="middle" font-size="20" fill="#55696F">of 6</text>
+</svg>
+</div><div class="column" style="width:60%;">
+<div class="kicker p1">
+<p>Part I · Topological observables</p>
+</div>
+<div class="ptitle">
+<p>Lines of constant physics at high temperature</p>
+</div>
+<div class="question">
+<p>Higher <span class="math inline">\(T\)</span> means finer <span class="math inline">\(a\)</span>: <br> charm is dynamical (<span class="math inline">\(N_f=2+1+1\)</span>), and the <span class="math inline">\(T=0\)</span> route costs <span class="math inline">\(\propto a^{-4}\)</span>.</p>
+</div>
+<div class="chips">
+<p><span class="chip" style="">gradient-flow step scaling</span> <span class="chip" style="">bare parameters</span> <span class="chip wip" style="">fermion flow</span></p>
+</div>
+</div></div>
+</section>
+<section id="the-gradient-flow" class="slide level2 p1">
+<h2>The gradient flow</h2>
+<div class="columns">
+<div class="column" style="width:54%;">
+<div style="font-size:0.8em; margin-top:0.9em">
+<p>Evolve the links <span class="math inline">\(V_\mu(x,t)\)</span>, from <span class="math inline">\(V_\mu(x,0)=U_\mu(x)\)</span>, in a fictitious <strong>flow time</strong> <span class="math inline">\(t\)</span> <span style=";color: gray;">[21]</span>:</p>
+<p><span class="math display">\[\partial_t V_\mu(x,t)=-g_0^2\,\big\{\partial_{x,\mu}S_W[V]\big\}\,V_\mu(x,t)\]</span></p>
+<p>UV fluctuations are averaged over a radius <span class="math inline">\(\sqrt{8t}\)</span>; flowed gluonic observables are <strong>finite</strong>, with no further renormalisation:</p>
+<p><span class="math display">\[g^2_{\rm flow}(\mu)=\frac{16\pi^2}{3}\,t^2\langle E(t)\rangle\Big|_{\mu=1/\sqrt{8t}}\]</span></p>
+</div>
+<div class="fragment card" style="font-size:0.7em; margin-top:0.4em">
+<p><span class="hd" style="">The step-scaling procedure</span></p>
+<ol type="1">
+<li>reference ensemble <span class="math inline">\((\beta_1,a_1)\)</span> on <span class="math inline">\(N_s^3\times N_\tau\)</span></li>
+<li>target <span class="math inline">\((sN_s)^3\times sN_\tau\)</span> at trial <span class="math inline">\(\beta_2\)</span>: same box and <span class="math inline">\(T\)</span> <strong>iff</strong> <span class="math inline">\(a_2=a_1/s\)</span></li>
+<li>flow both, read <span class="math inline">\(\hat t_1,\hat t_2\)</span> where <span class="math inline">\(g^2_{\rm flow}\)</span> is equal</li>
+<li><span class="math inline">\(s(\beta_2)=\sqrt{\hat t_2/\hat t_1}\)</span>; scan <span class="math inline">\(\beta_2\)</span> until <span class="math inline">\(s\)</span> hits its target</li>
+</ol>
+</div>
+</div><div class="column" style="width:46%;">
+<div style="text-align:center; margin-top:-1em">
+
+</div>
+<p><img data-src="figures/fig_gf_schematic.svg"></p>
+<div class="note" style="text-align:center; margin-top:-1.6em">
+<p>One physical flow radius, more sites on the finer lattice: <span class="math inline">\(\hat t_2/\hat t_1=s^2\)</span></p>
+</div>
+<div class="fragment card accent" style="font-size:0.7em">
+<span class="hd" style="">Why it suits high <span class="math inline">\(T\)</span>:</span>
+<div style="margin-top:-0.2em">
+<ol type="1">
+<li>Only a local gluonic observable, measured <strong>on the finite-<span class="math inline">\(T\)</span> ensembles</strong>:</li>
+<li>No hadron spectroscopy</li>
+<li>No <span class="math inline">\(T=0\)</span> runs at <span class="math inline">\(a^{-4}\)</span> cost.</li>
+</ol>
+</div>
+</div>
+</div></div>
+</section>
+<section id="step-scaling-the-gauge-coupling-from-the-flow" class="slide level2 p1">
+<h2>Step scaling: the gauge coupling from the flow</h2>
+<div style="font-size:0.84em; text-align:center">
+<p>Same <span class="math inline">\(g^2_{\rm flow}\)</span> <span class="math inline">\(\Rightarrow\)</span> same physical flow time on both lattices <span style=";color: gray;">[7]</span>: <span class="math inline">\(\quad t=a_1^2\hat t_1=a_2^2\hat t_2\;\Longrightarrow\; s\equiv\dfrac{a_1}{a_2}=\sqrt{\hat t_2/\hat t_1}\)</span></p>
+</div>
+<p><img data-src="figures/fig_stepscaling.svg" class="short"></p>
+<div class="columns">
+<div class="column" style="width:52%;">
+<div class="fragment lead" style="font-size:0.72em; margin-top:0.3em">
+<p>Purely gluonic and local: it works <strong>at finite <span class="math inline">\(T\)</span></strong>. <br> A flat plateau in <span class="math inline">\(1\ll\hat t\ll N_\tau^2\)</span>, moving monotonically with <span class="math inline">\(\beta_2\)</span>: scan and interpolate to the target <span class="math inline">\(s\)</span>.</p>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="fragment" style="margin-top:-0.7em;">
+<table class="simstab">
+<tbody><tr>
+<th>
+theory
+</th>
+<th>
+step
+</th>
+<th>
+<span class="math inline">\(T\)</span> [MeV]
+</th>
+<th>
+<span class="math inline">\(\beta_2^\star\)</span>
+</th>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(2+1\)</span> (check)
+</td>
+<td>
+<span class="math inline">\(24^3\!\times\!6\to32^3\!\times\!8\)</span>
+</td>
+<td>
+498
+</td>
+<td>
+4.121
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(2+1+1\)</span>
+</td>
+<td>
+<span class="math inline">\(24^3\!\times\!6\to32^3\!\times\!8\)</span>
+</td>
+<td>
+498
+</td>
+<td>
+4.004
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(2+1+1\)</span>
+</td>
+<td>
+<span class="math inline">\(24^3\!\times\!8\to36^3\!\times\!12\)</span>
+</td>
+<td>
+374
+</td>
+<td>
+4.040
+</td>
+</tr>
+</tbody></table>
+<div class="note" style="text-align:center; margin-top:-0.2em">
+<p>Agrees with the BMW scale setting <span style=";color: gray;">[8]</span> at the <strong>per-mille</strong> level</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="fixing-the-quark-masses-screening-masses" class="slide level2 p1">
+<h2>Fixing the quark masses: screening masses</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<div class="card alert" style="font-size:0.72em">
+<p><span class="hd" style="">Why not the time direction?</span> At finite <span class="math inline">\(T\)</span> it is only <span class="math inline">\(1/T=N_\tau a\)</span> long: <span class="math inline">\(N_\tau/2=3\)</span>–<span class="math inline">\(4\)</span> independent points, far too few to isolate a ground state.</p>
+</div>
+<div class="fragment card" style="font-size:0.72em">
+<p><span class="hd" style="">Use a long spatial direction</span> <span class="math inline">\(L=N_sa\)</span> with <span class="math inline">\(LT=4\)</span>: <span class="math display">\[\;C(z)=\sum_{x,y,\tau}\langle O(x,y,z,\tau)\,O^\dagger(0)\rangle\sim e^{-m_{\rm scr}z}\]</span></p>
+<p><span class="math inline">\(m_{\rm scr}\)</span> is an eigenvalue of the transfer matrix along <span class="math inline">\(z\)</span>: the inverse correlation length of the plasma in that channel.<br> Not a pole mass: the bath breaks Lorentz symmetry.</p>
+</div>
+</div><div class="column" style="width:48%;">
+<p><img data-src="figures/fig_screening_schematic.svg"></p>
+</div></div>
+<div class="fragment card accent" style="font-size:0.72em">
+<p><span class="hd" style="">The matching</span></p>
+<ul>
+<li>Same <span class="math inline">\(T\)</span> on both lattices, so equal <span class="math inline">\(m_{\rm scr}/T\)</span> means equal physics.</li>
+<li>Scan <span class="math inline">\(a\hat m_s\)</span> on the target (ratios <span class="math inline">\(m_s/m_l\)</span>, <span class="math inline">\(m_c/m_s\)</span> fixed) and interpolate to the reference value.</li>
+<li>Staggered fits: <span class="math inline">\(C(z)=A\cosh[m(z-\tfrac L2)]+(-1)^zA'\cosh[m'(z-\tfrac L2)]\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="quark-masses-screening-masses-not-reliable-at-high-t" class="slide level2 p1">
+<h2>Quark masses: screening masses not reliable at high T</h2>
+<p><img data-src="figures/fig_screening.svg" class="short"></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment card" style="font-size:0.74em">
+<p><span class="hd" style="">At high <span class="math inline">\(T\)</span> every quark carries at least <span class="math inline">\(\pi T\)</span></span> <span class="math inline">\(m_{\rm scr}\to 2\pi T+\mathcal O(m^2/T)\)</span> <span style=";color: gray;">[9]</span>: the dependence on the bare mass is washed out.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment card alert" style="font-size:0.74em">
+<p><span class="hd" style="">Already at <span class="math inline">\(T\simeq 500\)</span> MeV</span> <span class="math inline">\(\bar ss\)</span> still tunes; the pion sits <strong>7–8 % below</strong> <span class="math inline">\(2\pi\)</span>. <br> Towards 1 GeV even <span class="math inline">\(s\)</span> and <span class="math inline">\(c\)</span> saturate.</p>
+</div>
+</div></div>
+<div class="fragment takeaway" style="font-size:0.84em">
+<p>We need a <strong>short-distance</strong> fermionic observable, decoupled from the thermal bath</p>
+</div>
+</section>
+<section id="flowed-quark-bilinears" class="slide level2 p1 wip">
+<h2>Flowed quark bilinears</h2>
+<div class="columns">
+<div class="column" style="width:53%;">
+<div style="font-size:0.8em">
+<p>Flow the <strong>quark fields</strong> too (Lüscher <span style=";color: gray;">[10]</span>) to <span class="math inline">\(\sqrt{8t}=c\,L\)</span> and take</p>
+<p><span class="math display">\[z_f=\mathcal N_m^{-1}\,\frac{L}{t}\,
+\frac{\langle\bar\chi_f\chi_f\rangle_t}{\langle\bar\chi_f\gamma_\mu\overleftrightarrow{D}_{\!\mu}\chi_f\rangle_t}
+\;=\;L\,m_f^{\rm R}(\mu\sim 1/L)\]</span></p>
+</div>
+<div class="fragment" style="font-size:0.76em">
+<ul>
+<li>field renormalisation <strong>cancels</strong> in the ratio</li>
+<li>numerator chirality-odd (needs <span class="math inline">\(m\)</span>), denominator even</li>
+<li>staggered: a <strong>two-link</strong> flow keeps the remnant <span class="math inline">\(U(1)_\varepsilon\)</span> <span class="math inline">\(\Rightarrow\)</span> no additive renormalisation, <strong>one</strong> <span class="math inline">\(Z\)</span> for all flavours</li>
+</ul>
+</div>
+<div class="fragment note" style="margin-top:0.5em">
+<p>New <code>fermion_flow_meas</code> implemented in OpenStaPLE (GPU, OpenACC).</p>
+</div>
+</div><div class="column" style="width:47%;">
+<div class="fragment">
+<p><img data-src="figures/fig_ff_sensitivity.svg"></p>
+<div class="note" style="text-align:center">
+<p>Better Sensitivity than Screening masses: <span class="math inline">\(1\%\)</span> of <span class="math inline">\(m\)</span> moves <span class="math inline">\(z\)</span> by <span class="math inline">\(1\%\)</span></p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="z-is-a-genuine-renormalised-mass" class="slide level2 p1 wip">
+<h2>z is a genuine renormalised mass</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/fig_ff_AB.svg" class="tall"></p>
+<div class="fragment lead" style="text-align:center; font-size:0.72em">
+<p>Numerator <span class="math inline">\(\propto m\)</span> for a large range of masses, denominator flat. <br> <span class="math inline">\(z(m\to0)=0.0001(1)\)</span> on <span class="math inline">\(32^3\!\times\!8\)</span>: <strong>no additive renormalisation</strong></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p><img data-src="figures/fig_ff_cutoff.svg" class="tall"></p>
+<div class="lead" style="text-align:center; font-size:0.72em">
+<p>Masses tuned at <span class="math inline">\(c=0.3\)</span> only: the whole <span class="math inline">\(z(c)\)</span> agrees between the two spacings within <span class="math inline">\(0.5\%\)</span> once <span class="math inline">\(\sqrt{8t}\gtrsim4a\)</span>. <strong>The flow removes the cutoff.</strong></p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="first-tuning-β-3.873-4.010" class="slide level2 p1 wip">
+<h2>First tuning: β = 3.873 → 4.010</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><img data-src="figures/fig_ff_matching.svg" style="max-height:60vh"></p>
+</div><div class="column" style="width:48%;">
+<div style="text-align: center; margin-top:0.5em">
+<table class="simstab" style="font-size:0.66em; margin-top:0.4em;">
+<tbody><tr>
+<th>
+</th>
+<th>
+<span class="math inline">\(am^{\rm tuned}(\beta_2)\)</span>
+</th>
+<th>
+<span class="math inline">\(am(\beta_2)/am(\beta_1)\)</span>
+</th>
+</tr>
+<tr>
+<td>
+light
+</td>
+<td>
+0.000934(11)
+</td>
+<td>
+0.685(8)
+</td>
+</tr>
+<tr>
+<td>
+strange
+</td>
+<td>
+0.02490(7)
+</td>
+<td>
+0.679(2)
+</td>
+</tr>
+<tr>
+<td>
+charm
+</td>
+<td>
+0.2973(6)
+</td>
+<td>
+0.684(1)
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="fragment" style="font-size:0.76em; margin-top:0.5em">
+<ul>
+<li><strong>0.3 %</strong> on <span class="math inline">\(m_s\)</span> in <strong>~20 A100-hours</strong>, on existing configurations</li>
+<li>the <strong>same</strong> factor for <span class="math inline">\(l,s,c\)</span>, flat in <span class="math inline">\(c\)</span></li>
+<li>flavour ratios reproduced: <br> <span class="math inline">\(m_c/m_s=11.94(7)\)</span> (LCP 11.85), <span class="math inline">\(m_s/m_l=26.7(2)\)</span> (26.91)</li>
+</ul>
+</div>
+<div class="fragment card accent" style="font-size:0.74em; margin-top:0.6em">
+<p><span class="hd" style="">Open “Problem”:</span> The overall scale sits <strong>6–7 % below</strong> the zero-<span class="math inline">\(T\)</span> LCP, far beyond the errors:</p>
+<ul>
+<li>cutoff effects constant in <span class="math inline">\(c\)</span>? running?</li>
+<li>A third lattice spacing will settle this.</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="section-3" class="slide level2 divider d2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<svg class="sec-donut" viewbox="-20 -20 400 400" xmlns="http://www.w3.org/2000/svg">
+  <path class="wedge-off" style="--dx:-8.0px; --dy:-13.9px" d="M 176.76 64.05 A 116.00 116.00 0 0 0 81.20 119.22" fill="none" stroke="#1E5373" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:-16.0px; --dy:0.0px" d="M 77.96 124.83 A 116.00 116.00 0 0 0 77.96 235.17" fill="none" stroke="#3B7EA1" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:-8.0px; --dy:13.9px" d="M 81.20 240.78 A 116.00 116.00 0 0 0 176.76 295.95" fill="none" stroke="#86B6CF" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-on" style="--dx:8.0px; --dy:-13.9px" d="M 183.24 64.05 A 116.00 116.00 0 0 1 278.80 119.22" fill="none" stroke="#B5600E" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:16.0px; --dy:0.0px" d="M 282.04 124.83 A 116.00 116.00 0 0 1 282.04 235.17" fill="none" stroke="#EB811B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:8.0px; --dy:13.9px" d="M 278.80 240.78 A 116.00 116.00 0 0 1 183.24 295.95" fill="none" stroke="#F3B26B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <text x="180.0" y="194.0" text-anchor="middle" font-size="76" fill="#23373B">4</text>
+  <text x="180.0" y="226.0" text-anchor="middle" font-size="20" fill="#55696F">of 6</text>
+</svg>
+</div><div class="column" style="width:60%;">
+<div class="kicker p2">
+<p>Part II · Algorithmic challenges</p>
+</div>
+<div class="ptitle">
+<p>Sampling topology with normalizing flows</p>
+</div>
+<div class="question">
+<p>Can a learned map jump over the barrier, instead of climbing it?</p>
+</div>
+<div class="chips">
+<p><span class="chip" style="">2D <span class="math inline">\(U(1)\)</span> gauge theory</span> <span class="chip" style="">exactly solvable testbed</span> <span class="chip" style="">vs HMC</span></p>
+</div>
+</div></div>
+</section>
+<section id="a-flow-is-a-learned-change-of-variables" class="slide level2 p2">
+<h2>A flow is a learned change of variables</h2>
+<div style=" margin-top:-1em">
+
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="toyflow"><canvas width="1200" height="1000"></canvas></div>
+<script src="figures/toyflow/toyflow_data.js"></script>
+<script src="figures/toyflow/toyflow.js"></script>
+</div><div class="column" style="width:40%;">
+<div style="font-size:0.74em; margin-top:0.1em">
+<p>Toy Model <span class="math inline">\(p_\beta\propto e^{-S_\beta}\)</span>:</p>
+<ul>
+<li>five <strong>sectors</strong> <span class="math inline">\(Q\)</span> behind barriers <span class="math inline">\(\propto\beta\)</span>.</li>
+<li>Draw <span class="math inline">\(z\sim\mathcal N(0,\mathbb 1)\)</span></li>
+<li>Push it through <span class="math inline">\(x=f_\theta(z)\)</span>:</li>
+</ul>
+<p><span class="math display">\[q(x)=q_0(z)\,\big|\det\partial f_\theta/\partial z\big|^{-1}\]</span></p>
+</div>
+<div class="fragment tf-step card" data-step="0" style="font-size:0.68em">
+<p><span class="hd" style="">Learned from the action alone</span> 8 spline coupling layers, each moving <strong>one</strong> coordinate given the other (cheap Jacobian). Trained in <strong>5 s</strong> by minimising <span class="math inline">\(\mathrm{KL}(q\|p)\)</span> with <span class="math inline">\(\beta\)</span> annealed from 0 to 7.</p>
+</div>
+<div class="fragment tf-step card alert" data-step="1" style="font-size:0.68em">
+<p><span class="hd" style="">Never trusted</span> <span class="math inline">\(w=p/q\)</span> is known for every sample: ESS <span class="math inline">\(=84\%\)</span>. The flow <strong>under-fills</strong> <span class="math inline">\(Q=\pm2\)</span> by up to <span class="math inline">\(2\times\)</span> (hollow bars); reweighting or Metropolis restores the exact <span class="math inline">\(P(Q)\)</span>.</p>
+</div>
+<div class="fragment tf-step card accent" data-step="2" style="font-size:0.68em">
+<p><span class="hd" style="">Independent proposals beat freezing</span> Flow beats Local Metropolis by <strong>4 orders of magnitude</strong> in <span class="math inline">\(\tau_{\rm int}(Q)\)</span> at <span class="math inline">\(\beta=7\)</span>.</p>
+</div>
+</div></div>
+</section>
+<section id="flow-vs-hmc" class="slide level2 p2">
+<h2>Flow vs HMC</h2>
+<div class="note" style="text-align:center; margin-top:-0.4em">
+<p>Testbed: 2D <span class="math inline">\(U(1)\)</span>, <span class="math inline">\(\pi_1(U(1))=\mathbb Z\)</span>, freezes like QCD and is <strong>exactly solvable</strong>;<br> the flow reproduces the free energy to 5 digits (<span class="math inline">\(-F=568.424(48)\)</span> vs <span class="math inline">\(568.422\)</span> at <span class="math inline">\(\beta=7\)</span>).</p>
+</div>
+<p><img data-src="figures/fig_flow_hmc.svg"></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment lead" style="text-align:center; font-size:0.72em">
+<p><span class="math inline">\(L=24\)</span>: <span class="math inline">\(\chi\)</span> within <span class="math inline">\(1\%\)</span> at every <span class="math inline">\(\beta\)</span>, with an error <strong>8× smaller</strong> <br> from <strong>7× fewer</strong> samples (131k flow proposals vs 950k HMC trajectories)</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment lead" style="text-align:center; font-size:0.72em">
+<p><span class="math inline">\(\tau_{\rm int}(Q)\)</span>: HMC grows <span class="math inline">\(\times500\)</span> over the range, the flow <span class="math inline">\(\times24\)</span> <br> → a factor <span class="defect" style=""><strong>~400</strong></span> at <span class="math inline">\(\beta=7\)</span></p>
+</div>
+</div></div>
+</section>
+<section id="a-physics-informed-spectral-conditioner" class="slide level2 p2">
+<h2>A physics-informed spectral conditioner</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/fig_flow_spectral.svg" class="tall"></p>
+</div><div class="column" style="width:50%;">
+<div style="font-size:0.8em; margin-top:0.8em">
+<p>At large <span class="math inline">\(\beta\)</span> the information moves to the <strong>infrared</strong>: let the conditioner see a low-pass copy of the field</p>
+<p><span class="math display">\[F_{\rm LP}(k)=\frac{1}{1+2^{\,k-|k_c|}},\qquad k_c\ \text{trainable}\]</span></p>
+</div>
+<div class="fragment card" style="font-size:0.76em">
+<p><span class="hd" style="">The measure is untouched</span> The filter acts on a <strong>copy</strong> fed only to the conditioner: <span class="math inline">\(\log\det J\)</span> is unchanged.</p>
+</div>
+<div class="fragment takeaway" style="font-size:0.84em">
+<p><span class="math inline">\(\tau_{\rm int}(Q)\)</span> <strong>halved</strong>, uniformly in <span class="math inline">\(\beta\)</span></p>
+</div>
+</div></div>
+</section>
+<section id="the-problem" class="slide level2 p2">
+<h2>The Problem:</h2>
+<p><img data-src="figures/fig_flow_bottleneck.svg"></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment lead" style="text-align:center; font-size:0.72em">
+<p>One model, evaluated at <span class="math inline">\(L=24\to64\)</span>: acceptance <span class="math inline">\(10\%\to0.02\%\)</span> at <span class="math inline">\(\beta=7\)</span>, <span class="math inline">\(\chi\)</span> off by <span class="math inline">\(\times2.4\)</span>. <br> Freezing reappears <strong>inside</strong> the flow.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment lead" style="text-align:center; font-size:0.72em">
+<p><span class="math inline">\(\mathrm{ESS}(V)=\mathrm{ESS}(V_0)^{V/V_0}\)</span> <span style=";color: gray;">[13]</span>: <span class="math inline">\(V/V_0\)</span> independent regions, a small imperfection in each, <strong>compounded</strong>.</p>
+</div>
+</div></div>
+<div class="fragment takeaway" style="font-size:0.84em">
+<p>No single map can be trained across the whole distance on a physical lattice <span class="math inline">\(\;\Rightarrow\;\)</span> take <strong>many small steps</strong></p>
+</div>
+</section>
+<section id="section-4" class="slide level2 divider d2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<svg class="sec-donut" viewbox="-20 -20 400 400" xmlns="http://www.w3.org/2000/svg">
+  <path class="wedge-off" style="--dx:-8.0px; --dy:-13.9px" d="M 176.76 64.05 A 116.00 116.00 0 0 0 81.20 119.22" fill="none" stroke="#1E5373" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:-16.0px; --dy:0.0px" d="M 77.96 124.83 A 116.00 116.00 0 0 0 77.96 235.17" fill="none" stroke="#3B7EA1" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:-8.0px; --dy:13.9px" d="M 81.20 240.78 A 116.00 116.00 0 0 0 176.76 295.95" fill="none" stroke="#86B6CF" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:8.0px; --dy:-13.9px" d="M 183.24 64.05 A 116.00 116.00 0 0 1 278.80 119.22" fill="none" stroke="#B5600E" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-on" style="--dx:16.0px; --dy:0.0px" d="M 282.04 124.83 A 116.00 116.00 0 0 1 282.04 235.17" fill="none" stroke="#EB811B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:8.0px; --dy:13.9px" d="M 278.80 240.78 A 116.00 116.00 0 0 1 183.24 295.95" fill="none" stroke="#F3B26B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <text x="180.0" y="194.0" text-anchor="middle" font-size="76" fill="#23373B">5</text>
+  <text x="180.0" y="226.0" text-anchor="middle" font-size="20" fill="#55696F">of 6</text>
+</svg>
+</div><div class="column" style="width:60%;">
+<div class="kicker p2">
+<p>Part II · Algorithmic challenges</p>
+</div>
+<div class="ptitle">
+<p>Optimal annealing paths through distribution space</p>
+</div>
+<div class="question">
+<p>If we have to take many small steps, where should they go?</p>
+</div>
+<div class="chips">
+<p><span class="chip" style="">Fisher information geometry</span> <span class="chip" style="">learned coupling fields</span> <span class="chip" style=""><span class="math inline">\(CP^{N-1}\)</span></span> <span class="chip" style="">arxiv:2610.XXXX</span></p>
+</div>
+<div class="with">
+<p>with E. Cellini, G. Kanwar, S. Widyanto</p>
+</div>
+</div></div>
+</section>
+<section id="many-small-steps-tempering-on-boundary-conditions" class="slide level2 p2">
+<h2>Many small steps: tempering on boundary conditions</h2>
+<div style="font-size:0.84em; text-align:center; margin-top:-1.4em">
+<p><span class="math inline">\(S_\lambda=(1-\lambda)\,S_{\rm open}+\lambda\,S_{\rm periodic}\)</span>, traversed <strong>in sequence</strong> (stochastic NFs <span style=";color: gray;">[14]</span>) or <strong>in parallel</strong> (PT)</p>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/reused/fig_defect_anneal.svg" class="short"></p>
+<div class="note" style="text-align:center">
+<p>A <strong>defect</strong> of links with coupling <span class="math inline">\(\lambda\,\beta\)</span>:<br> open at <span class="math inline">\(\lambda=0\)</span> (<span class="math inline">\(Q\)</span> free), periodic at <span class="math inline">\(\lambda=1\)</span> <span style=";color: gray;">[15]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/reused/fig_pt_tower.svg" class="short"></p>
+</div></div>
+<div class="fragment" style="font-size:0.78em; text-align:center; margin-top:-1.2em">
+<p>Swap neighbours with <span class="math inline">\(A=\min\!\Big(1,\frac{p_{\lambda_r}(x_{r+1})\,p_{\lambda_{r+1}}(x_r)}{p_{\lambda_r}(x_r)\,p_{\lambda_{r+1}}(x_{r+1})}\Big)\)</span>;<br> measure on the periodic replica only: <strong>exact</strong>, and already in production in full 2+1 QCD <span style=";color: gray;">[16]</span></p>
+</div>
+<div class="fragment takeaway" style="font-size:0.82em">
+<p>The free parameter nobody optimises: the <strong>schedule</strong> <span class="math inline">\(0=\lambda_0&lt;\lambda_1&lt;\dots&lt;\lambda_N=1\)</span></p>
+</div>
+</section>
+<section id="information-geometry-fixes-the-schedule" class="slide level2 p2">
+<h2>Information geometry fixes the schedule</h2>
+<div class="columns">
+<div class="column" style="width:54%;">
+<div style="font-size:0.82em">
+<p>The <strong>Fisher metric</strong> on the family, measurable as a variance:</p>
+<p><span class="math display">\[g(\lambda)=\mathbb E_{p_\lambda}\!\big[(\partial_\lambda\log p_\lambda)^2\big]=\mathrm{Var}_{p_\lambda}\!\big[\partial_\lambda S_\lambda\big]\]</span></p>
+<p><span class="math inline">\(D_{\rm KL}(p_\lambda\|p_{\lambda+d\lambda})\simeq\tfrac12 g\,d\lambda^2\)</span>: large <span class="math inline">\(g\)</span> = hard to bridge.</p>
+</div>
+<div class="fragment" style="font-size:0.82em; margin-top:0.4em">
+<p>Thermodynamic length <span style=";color: gray;">[17]</span> and dissipation</p>
+<p><span class="math display">\[\Lambda=\int_0^1\!\sqrt{g}\,d\lambda=\sum_k\Delta\ell_k,\qquad W_{\rm diss}\propto\sum_k\Delta\ell_k^2\]</span></p>
+</div>
+<div class="fragment eqbox" style="display:block; width:max-content; margin:0.4em auto; font-size:0.86em">
+<p>geodesic: <span class="math inline">\(\;\Delta\ell_k=\Lambda/N\;\Longleftrightarrow\;\dfrac{d\lambda}{dt}\propto\dfrac{1}{\sqrt{g(\lambda)}}\)</span></p>
+</div>
+</div><div class="column" style="width:46%;">
+<p><img data-src="figures/reused/fig_res_fisher.svg"></p>
+<div class="fragment note" style="text-align:center">
+<p><span class="math inline">\(g\)</span> peaks at the <strong>topological crossover</strong>: <br> that is where the replicas must go.</p>
+</div>
+</div></div>
+</section>
+<section id="the-bottleneck-in-the-ladder-disappears" class="slide level2 p2">
+<h2>The bottleneck in the ladder disappears</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<p><img data-src="figures/reused/fig_res_swaps_bars.svg" style="max-height:46vh"></p>
+</div><div class="column" style="width:42%;">
+<div class="fragment" data-fragment-index="2">
+<p><img data-src="figures/reused/fig_res_prefactor.svg" style="max-height:44vh"></p>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:58%;">
+<div class="fragment lead" data-fragment-index="1" style="font-size:0.74em; margin-top:0.3em">
+<ul>
+<li>uniform ladder: swap acceptance collapses to <strong>9.5 %</strong> at the crossover</li>
+<li>optimised schedule: every pair near <strong>22 %</strong>, replicas round-trip;</li>
+<li><span class="math inline">\(CP^{20}\)</span>, <span class="math inline">\(L=150\)</span>: the periodic replica visits <span class="math inline">\(Q=-8\dots+8\)</span></li>
+</ul>
+</div>
+</div><div class="column" style="width:42%;">
+<div class="fragment lead" data-fragment-index="2" style="font-size:0.74em; margin-top:0.3em; text-align:center">
+<p><span class="math inline">\(\tau_{\rm int}(Q^2)\sim A\,(\xi/a)^z\)</span>: a power law, <br> and <span class="defect" style=""><strong>−20 %</strong></span> on <span class="math inline">\(A\)</span>, at no extra cost</p>
+</div>
+</div></div>
+</section>
+<section id="section-5" class="slide level2 divider d2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<svg class="sec-donut" viewbox="-20 -20 400 400" xmlns="http://www.w3.org/2000/svg">
+  <path class="wedge-off" style="--dx:-8.0px; --dy:-13.9px" d="M 176.76 64.05 A 116.00 116.00 0 0 0 81.20 119.22" fill="none" stroke="#1E5373" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:-16.0px; --dy:0.0px" d="M 77.96 124.83 A 116.00 116.00 0 0 0 77.96 235.17" fill="none" stroke="#3B7EA1" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:-8.0px; --dy:13.9px" d="M 81.20 240.78 A 116.00 116.00 0 0 0 176.76 295.95" fill="none" stroke="#86B6CF" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:8.0px; --dy:-13.9px" d="M 183.24 64.05 A 116.00 116.00 0 0 1 278.80 119.22" fill="none" stroke="#B5600E" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-off" style="--dx:16.0px; --dy:0.0px" d="M 282.04 124.83 A 116.00 116.00 0 0 1 282.04 235.17" fill="none" stroke="#EB811B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <path class="wedge-on" style="--dx:8.0px; --dy:13.9px" d="M 278.80 240.78 A 116.00 116.00 0 0 1 183.24 295.95" fill="none" stroke="#F3B26B" stroke-width="46.0" stroke-linecap="butt"></path>
+  <text x="180.0" y="194.0" text-anchor="middle" font-size="76" fill="#23373B">6</text>
+  <text x="180.0" y="226.0" text-anchor="middle" font-size="20" fill="#55696F">of 6</text>
+</svg>
+</div><div class="column" style="width:60%;">
+<div class="kicker p2">
+<p>Part II · Algorithmic challenges</p>
+</div>
+<div class="ptitle">
+<p>Out-of-equilibrium replica exchange</p>
+</div>
+<div class="question">
+<p>We chose where the replicas sit.<br> Can the swap itself be made better?</p>
+</div>
+<div class="chips">
+<p><span class="chip" style="">O-REX</span> <span class="chip" style="">exact for any protocol</span> <span class="chip" style=""><span class="math inline">\(CP^{20}\)</span></span> <span class="chip" style="">no neural network (yet)</span> <span class="chip" style="">arxiv:2610.XXXX</span></p>
+</div>
+</div></div>
+</section>
+<section id="o-rex-drive-the-couplings-past-each-other" class="slide level2 p2">
+<h2>O-REX: drive the couplings past each other</h2>
+<div style="margin-top:+3em">
+
+</div>
+<div class="columns">
+<div class="column" style="width:48%;">
+<svg class="anim-fig orex-fig" viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+  <line x1="70.0" y1="290.0" x2="590.0" y2="290.0" stroke="#33474B" stroke-width="1.6"></line>
+  <line x1="70.0" y1="290.0" x2="70.0" y2="30.0" stroke="#33474B" stroke-width="1.6"></line>
+  <text x="590.0" y="318.0" text-anchor="end" font-size="20" fill="#55696F">protocol step k</text>
+  <text x="56.0" y="24.0" text-anchor="start" font-size="20" fill="#55696F">defect coupling C</text>
+  <text x="58.0" y="76.0" text-anchor="end" font-size="20" fill="#9C162A">C<tspan baseline-shift="sub" font-size="70%">r</tspan></text>
+  <text x="58.0" y="256.0" text-anchor="end" font-size="20" fill="#3B7EA1">C<tspan baseline-shift="sub" font-size="70%">s</tspan></text>
+  <g class="fragment semi-fade-out" data-fragment-index="1">
+    <g class="fragment draw-line" data-fragment-index="0" style="--len:720">
+      <path d="M 80.0 70.0 L 330.0 70.0 L 330.1 250.0 L 585.0 250.0" fill="none" stroke="#9C162A" stroke-width="3"></path>
+    </g>
+    <g class="fragment draw-line" data-fragment-index="0" style="--len:720">
+      <path d="M 80.0 250.0 L 330.0 250.0 L 330.1 70.0 L 585.0 70.0" fill="none" stroke="#3B7EA1" stroke-width="3"></path>
+    </g>
+    <g class="fragment" data-fragment-index="0"><text x="84.0" y="278.0" font-size="19" fill="#55696F">standard swap: one jump</text></g>
+  </g>
+  <g class="fragment draw-line" data-fragment-index="1" style="--len:655.0">
+    <path d="M 110.0 70.0 L 183.3 70.0 L 183.3 100.0 L 256.7 100.0 L 256.7 130.0 L 330.0 130.0 L 330.0 160.0 L 403.3 160.0 L 403.3 190.0 L 476.7 190.0 L 476.7 220.0 L 550.0 220.0 L 550.0 250.0 L 585.0 250.0" fill="none" stroke="#9C162A" stroke-width="3.4" stroke-linejoin="round"></path>
+  </g>
+  <g class="fragment draw-line" data-fragment-index="1" style="--len:655.0">
+    <path d="M 110.0 250.0 L 183.3 250.0 L 183.3 220.0 L 256.7 220.0 L 256.7 190.0 L 330.0 190.0 L 330.0 160.0 L 403.3 160.0 L 403.3 130.0 L 476.7 130.0 L 476.7 100.0 L 550.0 100.0 L 550.0 70.0 L 585.0 70.0" fill="none" stroke="#3B7EA1" stroke-width="3.4" stroke-linejoin="round"></path>
+  </g>
+  <g class="fragment seq-fade" data-fragment-index="1" style="--d:0.9s">
+    <text x="585.0" y="54.0" text-anchor="end" font-size="19" fill="#33474B">n<tspan baseline-shift="sub" font-size="70%">step</tspan> = 6 jumps, relaxation on each flat</text>
+  </g>
+</svg>
+</div><div class="column" style="width:52%;">
+<div class="fragment" data-fragment-index="1" style="font-size:0.78em">
+<p><span class="math inline">\(n_{\rm step}\)</span> jumps with local relaxation in between <span style=";color: gray;">[18]</span>. The action is <strong>linear</strong> in the defect coupling, <span class="math inline">\(S=S_{\rm bulk}+C\,E_{\rm def}\)</span>, so</p>
+<p><span class="math display">\[W=\sum_k\Big[\Delta C_r^{(k)}E_{\rm def}(x_r^{(k)})+\Delta C_s^{(k)}E_{\rm def}(x_s^{(k)})\Big]\]</span></p>
+<p>accept with <span class="math inline">\(\min(1,e^{-W})\)</span> and <span class="math inline">\(n_{\rm step}=0\)</span> is the standard swap.</p>
+</div>
+<div class="fragment card" data-fragment-index="2" style="font-size:0.74em">
+<p><span class="hd" style="">Exact for any <span class="math inline">\(n_{\rm step}\)</span></span> Same ensembles at both ends: Jarzynski <span style=";color: gray;">[19]</span> gives <span class="math inline">\(\langle e^{-W}\rangle=1\)</span>, and <span class="math inline">\(\langle W\rangle\)</span> is the dissipation, i.e.&nbsp;a KL divergence: the flows’ loss.</p>
+</div>
+</div></div>
+<div class="fragment card accent" data-fragment-index="3" style="font-size:0.74em">
+<p><span class="hd" style="">Made it cheap</span> In theory we should relax the full lattice between jumps; in practice we can relax only a patch of half-size <span class="math inline">\(L_R\)</span> around the defect; the figure of merit is <span class="math inline">\(\tau_{\rm int}(Q^2)\times\text{cost}\)</span>.</p>
+</div>
+</section>
+<section id="o-rex-in-cp²⁰-a-1.77-gain-at-equal-cost" class="slide level2 money p2">
+<h2>O-REX in CP²⁰: a 1.77× gain at equal cost</h2>
+<p><img data-src="figures/fig_orex.svg"></p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="fragment lead" style="text-align:center; font-size:0.7em">
+<p>Dissipation cut <strong>5×</strong> at <span class="math inline">\(n_{\rm step}=8\)</span>, independent of <span class="math inline">\(N_R\)</span>: <span class="math inline">\(\langle W\rangle_8/\langle W\rangle_0=0.217\)</span></p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="fragment lead" style="text-align:center; font-size:0.7em">
+<p>All 126 runs on the <strong>parameter-free</strong> law <span class="math inline">\({\rm erfc}(\sqrt{\langle W\rangle}/2)\)</span>, within 0.6 points</p>
+</div>
+</div><div class="column" style="width:34%;">
+<div class="fragment lead" style="text-align:center; font-size:0.7em">
+<p><span class="math inline">\(1817\to1028\)</span>: gain <span class="defect" style=""><strong>1.77(12)</strong></span> at <span class="math inline">\(L_R=10\)</span>; <br> the best patch is <span class="math inline">\(\sim2\xi\)</span></p>
+</div>
+</div></div>
+</section>
+<section id="to-sum-up" class="slide level2 p2">
+<h2>To Sum up</h2>
+<div class="results">
+<div class="colhd p1c">
+<p>Topological observables</p>
+</div>
+<div class="colhd p2c">
+<p>Algorithmic challenges</p>
+</div>
+<div class="rc k1">
+<p><span class="t" style="">Topological rate at finite <span class="math inline">\(p\)</span></span> first lattice determination at <span class="math inline">\(p\neq0\)</span>: <span class="math inline">\(\Gamma_{\rm top}\propto p\)</span> up to <span class="math inline">\(p/T\simeq3\pi\)</span>, two orderings agree</p>
+</div>
+<div class="rc k4">
+<p><span class="t" style="">Normalizing flows</span> <span class="math inline">\(\tau_{\rm int}(Q)\)</span> <strong>~400×</strong> below HMC at <span class="math inline">\(\beta=7\)</span>; spectral conditioner another <strong>2×</strong>; ESS wall in <span class="math inline">\(V\)</span></p>
+</div>
+<div class="rc k2">
+<p><span class="t" style=""><span class="math inline">\(b_2\)</span> across the crossover</span> first determination in <span class="math inline">\(N_f=2+1\)</span>: from ChPT at 130 MeV to DIGA at 200 MeV (N. Francesconi’s MSc)</p>
+</div>
+<div class="rc k5">
+<p><span class="t" style="">Optimal annealing paths</span> Fisher geodesic <strong>learned from samples</strong>: bottleneck removed, <strong>−20 %</strong> on the prefactor</p>
+</div>
+<div class="rc k3">
+<p><span class="t" style="">Lines of constant physics</span> step scaling: <strong>per-mille</strong> agreement with BMW; fermion flow: masses to <strong>0.3 %</strong> (WIP)</p>
+</div>
+<div class="rc k6">
+<p><span class="t" style="">Out-of-equilibrium exchange</span> exact, controlled by the same thermodynamic length: <strong>1.77(12)×</strong> at equal cost</p>
+</div>
+</div>
+</section>
+<section id="third-year-plan" class="slide level2">
+<h2>Third year plan</h2>
+<div style="margin-top:+3.5em;">
+
+</div>
+<div class="tracks">
+<div class="tr t1">
+<p><span class="n" style="">1</span> <span class="t" style=""><span class="math inline">\(\Gamma_{\rm top}(p)\)</span> in full QCD</span></p>
+<ul>
+<li><span class="math inline">\(N_f=2+1\)</span>, physical masses: does <span class="math inline">\(\Gamma\propto p\)</span> survive?</li>
+<li>one temperature first then a scan towards <strong>500 MeV</strong></li>
+</ul>
+</div>
+<div class="tr t2">
+<p><span class="n" style="">2</span> <span class="t" style="">The LCP, closed</span></p>
+<ul>
+<li>third lattice spacing: the <strong>closure test</strong> of the fermion flow</li>
+<li>mass step-scaling function <span class="math inline">\(\sigma_z\)</span></li>
+<li>Producing <span class="math inline">\(2+1+1\)</span> ensembles for the high-<span class="math inline">\(T\)</span> plan</li>
+</ul>
+</div>
+<div class="tr t3">
+<p><span class="n" style="">3</span> <span class="t" style="">NEO-REX</span></p>
+<ul>
+<li>trainable gauge-equivariant (stout-like) maps between the O-REX steps</li>
+<li>train by minimising <span class="math inline">\(\langle W\rangle\)</span>; patch <span class="math inline">\(\sim\xi\)</span>, <strong>not</strong> <span class="math inline">\(V\)</span>: no ESS wall</li>
+<li>scaling to the continuum, then 4D</li>
+</ul>
+</div>
+</div>
+<div class="fragment" style="margin-top:0.9em">
+<div class="flow" style="font-size:0.74em">
+<p><span class="box net" style="">enhanced sampler</span> <span class="arrow" style="">→</span> <span class="box" style="">ensembles on the <span class="math inline">\(N_f=2+1+1\)</span> LCP</span> <span class="arrow" style="">→</span> <span class="box ok" style=""><span class="math inline">\(\chi,\ b_2,\ \Gamma_{\rm top}(p)\)</span> at high <span class="math inline">\(T\)</span></span></p>
+</div>
+</div>
+</section>
+<section>
+<section id="thank-you-for-your-attention" class="title-slide slide level1 center">
+<h1>Thank you for your attention!</h1>
+
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<div class="refs">
+<p><span class="k" style="">[1]</span> Grilli di Cortona, Hardy, Pardo Vega, Villadoro, JHEP 01 (2016) 034 <br> <span class="k" style="">[2]</span> Del Debbio, Manca, Vicari, PLB 594 (2004) 315; Schaefer, Sommer, Virotta, NPB 845 (2011) 93 <br> <span class="k" style="">[3]</span> Notari, Rompineve, Villadoro, PRL 131 (2023) 011004 [arXiv:2211.03799] <br> <span class="k" style="">[4]</span> Bonanno, D’Angelo, D’Elia, Maio, Naviglio, PRD 108 (2023) 074515; PRL 132 (2024) 051903 <br> <span class="k" style="">[5]</span> Hansen, Lupo, Tantalo, PRD 99 (2019) 094508 [arXiv:1903.06476] <br> <span class="k" style="">[6]</span> Graf, Steffen, PRD 83 (2011) 075011; Salvio, Strumia, Xue, JCAP 01 (2014) 011 <br> <span class="k" style="">[7]</span> Junnarkar, Moore, Chaumet, PRD 108 (2023) 074512 <br> <span class="k" style="">[8]</span> Borsanyi et al., JHEP 09 (2012) 010; PRL 125 (2020) 052001; Bellwied et al., PRD 92 (2015) 114505 <br> <span class="k" style="">[9]</span> Dalla Brida, Giusti, Harris, Laudicina, Pepe, JHEP 04 (2022) 034 [arXiv:2112.05427] <br> <span class="k" style="">[10]</span> Lüscher, JHEP 04 (2013) 123 [arXiv:1302.5246] <br> <span class="k" style="">[11]</span> Lüscher, Commun. Math. Phys. 293 (2010) 899 <br> <span class="k" style="">[12]</span> Albergo, Kanwar, Shanahan, PRD 100 (2019) 034515; Kanwar et al., PRL 125 (2020) 121601 <br> <span class="k" style="">[13]</span> Abbott et al., EPJA 59 (2023) 257 [arXiv:2211.07541] <br> <span class="k" style="">[14]</span> Caselle, Cellini, Nada, Panero, JHEP 07 (2022) 015 [arXiv:2201.08862] <br> <span class="k" style="">[15]</span> Hasenbusch, PRD 96 (2017) 054504; Berni, Bonanno, D’Elia, PRD 100 (2019) 114509 <br> <span class="k" style="">[16]</span> Bonanno, Clemente, D’Elia, Maio, Parente, JHEP 08 (2024) 236; Bonanno et al., EPJC 84 (2024) 916 <br> <span class="k" style="">[17]</span> Crooks, PRL 99 (2007) 100602; Sivak, Crooks, PRL 108 (2012) 190602 <br> <span class="k" style="">[18]</span> Ballard, Jarzynski, PNAS 106 (2009) 12224; Bonanno, Nada, Vadacchino, JHEP 04 (2024) 126 <br> <span class="k" style="">[19]</span> Jarzynski, PRL 78 (1997) 2690 <br> <span class="k" style="">[20]</span> Bonati, D’Elia, Panagopoulos, Vicari, PRL 110 (2013) 252003 <br> <span class="k" style="">[21]</span> Lüscher, JHEP 08 (2010) 071 [arXiv:1006.4518] <br></p>
+</div>
+</section>
+<section id="backup-code-correctness" class="slide level2 p1 wip">
+<h2>Backup · code correctness</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/backup/B1_free_field_precision.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/backup/B2_numerical_systematics.png"></p>
+</div></div>
+<div class="note" style="text-align:center">
+<p>Free field: exact finite-box formula to <span class="math inline">\(10^{-10}\)</span> (<span class="math inline">\(24^3\)</span>) and <span class="math inline">\(4\cdot10^{-9}\)</span> (<span class="math inline">\(32^3\)</span>). Flow step <span class="math inline">\(0.02\to0.01\)</span>: <span class="math inline">\(\le 2\cdot10^{-6}\)</span>; CG residue <span class="math inline">\(10^{-8}\to10^{-10}\)</span>: <span class="math inline">\(\le3\cdot10^{-7}\)</span>; batching: bitwise identical.</p>
+</div>
+</section>
+<section id="backup-the-noisy-light-quark" class="slide level2 p1 wip">
+<h2>Backup · the noisy light quark</h2>
+<p><img data-src="figures/backup/06_topology_near_zero_modes.png" class="tall"></p>
+<div class="note" style="text-align:center">
+<p>Spikes are <span class="math inline">\(|Q|=1\)</span> configurations with one near-zero Dirac mode (<span class="math inline">\(a\lambda_0=0.012\)</span>–<span class="math inline">\(0.053\)</span>, fitted from the mass dependence of <span class="math inline">\(z\)</span>). In the <span class="math inline">\(Q=0\)</span> sector the light error drops from <span class="math inline">\(1.10\%\)</span> to <span class="math inline">\(0.14\%\)</span> on <span class="math inline">\(24^3\times6\)</span>. Tune with strange: one factor for all flavours.</p>
+</div>
+</section>
+<section id="backup-tuned-ratio-vs-c" class="slide level2 p1 wip">
+<h2>Backup · tuned ratio vs c</h2>
+<p><img data-src="figures/fig_ff_tuned.svg" class="tall"></p>
+<div class="note" style="text-align:center">
+<p>The tuned ratio <span class="math inline">\(am(\beta_2)/am(\beta_1)\)</span> is flat in <span class="math inline">\(c\in[0.15,0.40]\)</span> and the same for <span class="math inline">\(l,s,c\)</span>; the zero-<span class="math inline">\(T\)</span> LCP sits 6–7 % higher, the naive <span class="math inline">\(3/4\)</span> higher still.</p>
+</div>
+</section>
+<section id="backup-topology-is-not-frozen" class="slide level2 p2">
+<h2>Backup · topology is not frozen</h2>
+<p><img data-src="figures/reused/fig_res_qhistory.svg"></p>
+<div class="note" style="text-align:center">
+<p><span class="math inline">\(CP^{20}\)</span>, <span class="math inline">\(L=150\)</span>, <span class="math inline">\(N_R=12\)</span>, optimised schedule, ~350k measurements: the periodic replica visits <span class="math inline">\(Q=-8\dots+8\)</span>.</p>
+</div>
+
+<div class="reveal-header">
+<div class="header-title">
+<p> </p>
+</div>
+<div class="header-logo">
+<img data-src="cherubino_white.png">
+</div>
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>R. Dionisio · Topological observables and the sampling problem</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="second_year_seminar_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="second_year_seminar_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="second_year_seminar_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="second_year_seminar_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="second_year_seminar_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="second_year_seminar_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="second_year_seminar_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="second_year_seminar_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="second_year_seminar_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="second_year_seminar_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+<script src="second_year_seminar_files/libs/quarto-contrib/metropolis-beamer-1.0.0/add_header.js" defer="true"></script>
+</body></html>
